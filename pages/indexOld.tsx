@@ -1,13 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { useState } from "react";
 
 const serverUrl = "http://localhost:4000";
 
 export default function Home() {
+  const [gods, setGods] = useState([]);
+
   const pingServer = async () => {
     // const resp = await fetch("http://localhost:4000/api");
     const resp = await fetch(`${serverUrl}/api`);
@@ -27,6 +26,18 @@ export default function Home() {
     console.log(data);
   };
 
+  const testSession = async () => {
+    const resp = await fetch("http://localhost:4000/testsession");
+    const data = await resp.json();
+    console.log(data);
+  };
+
+  const getGods = async () => {
+    const resp = await fetch("http://localhost:4000/getgods");
+    const data = await resp.json();
+    console.log(data);
+  };
+
   const handlePing = () => {
     pingServer();
   };
@@ -37,6 +48,15 @@ export default function Home() {
 
   const handleCreateSession = () => {
     createSession();
+  };
+
+  const handleTestSession = () => {
+    testSession();
+  };
+
+  const handleGetGods = () => {
+    const gods = getGods();
+    setGods(gods);
   };
 
   return (
@@ -52,6 +72,11 @@ export default function Home() {
           <button onClick={() => handlePing()}>Ping server</button>
           <button onClick={() => handleSmitePing()}>Ping Smite API</button>
           <button onClick={() => handleCreateSession()}>Create Session</button>
+          <button onClick={() => handleTestSession()}>Test Session</button>
+          <button onClick={() => handleGetGods()}>Get Gods</button>
+          <div>
+            {gods && gods.map((god) => <div key={god.id}>{god.Name}</div>)}
+          </div>
         </div>
       </main>
     </>
