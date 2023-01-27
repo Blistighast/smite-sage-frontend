@@ -39,6 +39,12 @@ export default function Home() {
     setGods(data);
   };
 
+  const getPatchNotes = async () => {
+    const resp = await fetch(`${serverUrl}/patchnotes`);
+    const data = await resp.json(resp);
+    console.log(data);
+  };
+
   const handlePing = () => {
     pingServer();
   };
@@ -59,6 +65,10 @@ export default function Home() {
     getGods();
   };
 
+  const handleGetPatchNotes = () => {
+    getPatchNotes();
+  };
+
   return (
     <>
       <Head>
@@ -74,6 +84,7 @@ export default function Home() {
           <button onClick={() => handleCreateSession()}>Create Session</button>
           <button onClick={() => handleTestSession()}>Test Session</button>
           <button onClick={() => handleGetGods()}>Get Gods</button>
+          <button onClick={() => handleGetPatchNotes()}>Get Patch Notes</button>
           <div>
             {gods && gods.map((god) => <div key={god.id}>{god.Name}</div>)}
           </div>
