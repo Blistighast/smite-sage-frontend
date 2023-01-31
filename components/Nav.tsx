@@ -5,6 +5,7 @@ interface NavProps {}
 const Nav: React.FC<NavProps> = () => {
   return (
     <div>
+      <Link href="/">Home</Link>
       <Link href="/gods">Gods</Link>
     </div>
   );
