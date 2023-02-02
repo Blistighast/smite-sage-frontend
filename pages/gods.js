@@ -9,7 +9,6 @@ const Gods = () => {
   const getGods = async () => {
     const resp = await fetch(`${serverUrl}/getgods`);
     const data = await resp.json();
-    console.log(gods);
     setGods(data);
   };
 
@@ -19,7 +18,7 @@ const Gods = () => {
 
   return (
     <div>
-      {gods ? gods.map((god) => <GodCard key={god.id} god={god} />) : null}
+      {gods ? gods.map((god) => <GodCard key={god._id} god={god} />) : null}
     </div>
   );
 };
