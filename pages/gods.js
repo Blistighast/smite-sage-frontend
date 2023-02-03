@@ -17,8 +17,12 @@ const Gods = () => {
   }, []);
 
   return (
-    <div>
-      {gods ? gods.map((god) => <GodCard key={god._id} god={god} />) : null}
+    <div className="card-holder">
+      {gods ? (
+        gods.map((god) => <GodCard key={god._id} god={god} />)
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 };

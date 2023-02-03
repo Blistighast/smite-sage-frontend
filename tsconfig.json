@@ -19,6 +19,13 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/indexOld.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/indexOld.tsx",
+    "pages/god/[id].js",
+    "components/GodPage.js"
+  ],
   "exclude": ["node_modules"]
 }
