@@ -1,36 +1,40 @@
 .card {
   display: grid;
   background-color: black;
-  border: 2px solid red;
+  border: 2px solid gold;
   border-radius: 5px;
 }
 
 .godCard {
+  position: relative;
   color: white;
   text-transform: uppercase;
   text-decoration: none;
+  padding: none;
 }
 
 .godCard h3 {
   text-align: center;
 }
 
+.godCard svg {
+  background-color: transparent;
+  position: absolute;
+  bottom: 2em;
+}
+
 .lowerFrame {
-  background: url("/lowerframe.svg");
-  // background-image: url("/pantheon_icons/Hindu.webp");
+  // background-image: url("/lowerFrame.svg");
+  // background-repeat: no-repeat;
   position: relative;
+  // top: -3rem;
   display: flex;
   justify-content: space-between;
-  // border: 40px solid;
-  // // border-image: linear-gradient(red, blue) 27;
-  // border-image-source: url("/lowerFrame.svg");
-  // border-image-slice: 1;
-  // border-width: 1em;
 }
 
 .lowerFrame img {
   position: absolute;
-  top: -3em;
+  top: -4em;
   padding: 0.5em;
 
   background-color: black;
@@ -38,7 +42,7 @@
 }
 
 .lowerFrame p {
-  padding: 0.5em 1em 0 1em;
+  padding: 0 1em 1em 1em;
 }
 
 .pantheon img {

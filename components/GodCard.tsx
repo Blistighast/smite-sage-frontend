@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styles from "@/styles/card.module.scss";
 import Link from "next/link";
+import SVG from "./lowerFrame.svg";
+import { ReactSVG } from "react-svg";
 
 interface LayoutProps {
   god: {
@@ -27,6 +29,9 @@ const GodCard: React.FC<LayoutProps> = ({ god }) => {
         width={300}
         height={420}
       />
+      <svg width={300} height={100}>
+        <image href="/lowerFrame.svg" width={300} height={100} />
+      </svg>
       <span className={styles.lowerFrame}>
         <div className="roles">
           <Image
