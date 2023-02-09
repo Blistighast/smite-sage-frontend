@@ -8,3 +8,11 @@ const Footer = () => {
 };
 
 export default Footer;
+
+//Todo
+// authorship information
+// copyright information
+// contact information
+// sitemap
+// back to top links
+// related documents

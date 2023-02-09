@@ -6,7 +6,7 @@ import { testGods } from "../testData";
 const serverUrl = "http://localhost:4000";
 
 const Gods = () => {
-  const [gods, setGods] = useState(testGods);
+  const [gods, setGods] = useState();
 
   const getGods = async () => {
     const resp = await fetch(`${serverUrl}/getgods`);

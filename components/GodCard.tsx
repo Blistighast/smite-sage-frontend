@@ -14,35 +14,39 @@ interface LayoutProps {
 
 const GodCard: React.FC<LayoutProps> = ({ god }) => {
   return (
-    <Link href={`/god/${god.id}`}>
-      <div className={`${styles.card} ${styles.godCard}`}>
-        <Image
-          className="godCardPic"
-          src={god.godCard_URL}
-          alt={`picture of ${god.Name}`}
-          width={240}
-          height={400}
-        />
-        <p>{god.Name}</p>
-        <span className="pantheon">
-          <p>{god.Pantheon}</p>
-          <Image
-            src={`/pantheon_icons/${god.Pantheon}.webp`}
-            alt="Pantheon Icon"
-            width={30}
-            height={30}
-          />
-        </span>
-        <span className="roles">
-          <p>{god.Roles}</p>
+    <Link
+      href={`/god/${god.id}`}
+      className={`${styles.card} ${styles.godCard}`}
+    >
+      <h3>{god.Name}</h3>
+      <Image
+        className="godCardPic"
+        src={god.godCard_URL}
+        alt={`picture of ${god.Name}`}
+        // fill
+        width={300}
+        height={420}
+      />
+      <span className={styles.lowerFrame}>
+        <div className="roles">
           <Image
             src={`/class-icons/${god.Roles}.webp`}
             alt="Role Icon"
-            width={30}
-            height={30}
+            width={50}
+            height={50}
           />
-        </span>
-      </div>
+          <p>{god.Roles}</p>
+        </div>
+        <div className={styles.pantheon}>
+          <Image
+            src={`/pantheon_icons/${god.Pantheon}.webp`}
+            alt="Pantheon Icon"
+            width={50}
+            height={50}
+          />
+          <p>{god.Pantheon}</p>
+        </div>
+      </span>
     </Link>
   );
 };
