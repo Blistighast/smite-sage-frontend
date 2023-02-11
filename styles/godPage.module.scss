@@ -1,0 +1,19 @@
+.godPage {
+  display: grid;
+}
+
+.overviewContainer {
+  display: grid;
+  border: 2px solid gold;
+  grid-template-columns: 1fr 1fr;
+}
+
+.abilitiesContainer {
+  display: flex;
+  border: 2px solid gold;
+}
+
+.ability {
+  padding: 1em;
+  border: 1px solid blue;
+}
