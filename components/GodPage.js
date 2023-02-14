@@ -6,6 +6,7 @@ import styles from "@/styles/godPage.module.scss";
 
 export default function GodPage({ id }) {
   const [god, setGod] = useState();
+  const [godAbilities, setGodAbilities] = useState([]);
 
   const fetchGod = async () => {
     const resp = await fetch(`http://localhost:4000/gods/${id}`);
@@ -15,40 +16,74 @@ export default function GodPage({ id }) {
 
   useEffect(() => {
     fetchGod();
-  }, []);
+    if (god) {
+      setGodAbilities([
+        {
+          id: god.AbilityId1,
+          abilityName: god.Ability1,
+          iconUrl: god.godAbility1_URL,
+          description: god.Ability_1.Description.itemDescription.description,
+        },
+        {
+          id: god.AbilityId2,
+          abilityName: god.Ability2,
+          iconUrl: god.godAbility2_URL,
+          description: god.Ability_2.Description.itemDescription.description,
+        },
+        {
+          id: god.AbilityId3,
+          abilityName: god.Ability3,
+          iconUrl: god.godAbility3_URL,
+          description: god.Ability_3.Description.itemDescription.description,
+        },
+        {
+          id: god.AbilityId4,
+          abilityName: god.Ability4,
+          iconUrl: god.godAbility4_URL,
+          description: god.Ability_4.Description.itemDescription.description,
+        },
+        {
+          id: god.AbilityId5,
+          abilityName: god.Ability5,
+          iconUrl: god.godAbility5_URL,
+          description: god.Ability_5.Description.itemDescription.description,
+        },
+      ]);
+    }
+  }, [god]);
 
-  const godAbilities = [
-    {
-      id: god.AbilityId1,
-      abilityName: god.Ability1,
-      iconUrl: god.godAbility1_URL,
-      description: god.Ability_1.Description.itemDescription.description,
-    },
-    {
-      id: god.AbilityId2,
-      abilityName: god.Ability2,
-      iconUrl: god.godAbility2_URL,
-      description: god.Ability_2.Description.itemDescription.description,
-    },
-    {
-      id: god.AbilityId3,
-      abilityName: god.Ability3,
-      iconUrl: god.godAbility3_URL,
-      description: god.Ability_3.Description.itemDescription.description,
-    },
-    {
-      id: god.AbilityId4,
-      abilityName: god.Ability4,
-      iconUrl: god.godAbility4_URL,
-      description: god.Ability_4.Description.itemDescription.description,
-    },
-    {
-      id: god.AbilityId5,
-      abilityName: god.Ability5,
-      iconUrl: god.godAbility5_URL,
-      description: god.Ability_5.Description.itemDescription.description,
-    },
-  ];
+  // const godAbilities = [
+  //   {
+  //     id: god.AbilityId1,
+  //     abilityName: god.Ability1,
+  //     iconUrl: god.godAbility1_URL,
+  //     description: god.Ability_1.Description.itemDescription.description,
+  //   },
+  //   {
+  //     id: god.AbilityId2,
+  //     abilityName: god.Ability2,
+  //     iconUrl: god.godAbility2_URL,
+  //     description: god.Ability_2.Description.itemDescription.description,
+  //   },
+  //   {
+  //     id: god.AbilityId3,
+  //     abilityName: god.Ability3,
+  //     iconUrl: god.godAbility3_URL,
+  //     description: god.Ability_3.Description.itemDescription.description,
+  //   },
+  //   {
+  //     id: god.AbilityId4,
+  //     abilityName: god.Ability4,
+  //     iconUrl: god.godAbility4_URL,
+  //     description: god.Ability_4.Description.itemDescription.description,
+  //   },
+  //   {
+  //     id: god.AbilityId5,
+  //     abilityName: god.Ability5,
+  //     iconUrl: god.godAbility5_URL,
+  //     description: god.Ability_5.Description.itemDescription.description,
+  //   },
+  // ];
 
   return (
     <div>

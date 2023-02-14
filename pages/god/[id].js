@@ -6,3 +6,9 @@ export default function SingleGodPage() {
 
   return <GodPage id={router.query.id} />;
 }
+
+export async function getServerSideProps() {
+  return {
+    props: {},
+  };
+}
