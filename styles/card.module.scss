@@ -48,3 +48,10 @@
 .pantheon img {
   right: 0em;
 }
+
+// fixes cthuhlus multi word pantheon, but breaks the images, need to come back to fix those
+// .pantheon p {
+//   max-width: 60px;
+//   word-spacing: 5rem;
+//   overflow-wrap: break-word;
+// }
