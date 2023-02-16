@@ -1,18 +1,39 @@
 import styles from "@/styles/cards-container.module.scss";
+import { useRouter } from "next/router";
 
 const GodsFilter: React.FC<any> = ({ gods, filteredGods, setFilteredGods }) => {
+  const router = useRouter();
+
   const handleFilter = (godRole: string) => {
     setFilteredGods(
       gods.filter((god: { Roles: string }) => god.Roles === godRole)
     );
   };
 
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFilteredGods(
+      gods.filter((god: { Name: string }) =>
+        // god.Name.toLowerCase().includes(e.target.value.toLowerCase())
+        god.Name.toLowerCase().startsWith(e.target.value.toLowerCase())
+      )
+    );
+  };
+
+  const goToGodPage = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    router.push(`/god/${filteredGods[0].id}`);
+  };
+
   return (
     <div className={styles.search}>
-      <span>
-        <input id="search" type="text" />
-        <button>Search</button>
-      </span>
+      <form onSubmit={(e) => goToGodPage(e)}>
+        <input
+          type="search"
+          placeholder="Search for a god"
+          onChange={(e) => handleSearch(e)}
+        />
+        <button type="submit">Search</button>
+      </form>
       <span>
         <button onClick={() => setFilteredGods(gods)}>All</button>
         <button onClick={() => handleFilter("Warrior")}>Warrior</button>
