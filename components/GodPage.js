@@ -52,46 +52,13 @@ export default function GodPage({ id }) {
     }
   }, [god]);
 
-  // const godAbilities = [
-  //   {
-  //     id: god.AbilityId1,
-  //     abilityName: god.Ability1,
-  //     iconUrl: god.godAbility1_URL,
-  //     description: god.Ability_1.Description.itemDescription.description,
-  //   },
-  //   {
-  //     id: god.AbilityId2,
-  //     abilityName: god.Ability2,
-  //     iconUrl: god.godAbility2_URL,
-  //     description: god.Ability_2.Description.itemDescription.description,
-  //   },
-  //   {
-  //     id: god.AbilityId3,
-  //     abilityName: god.Ability3,
-  //     iconUrl: god.godAbility3_URL,
-  //     description: god.Ability_3.Description.itemDescription.description,
-  //   },
-  //   {
-  //     id: god.AbilityId4,
-  //     abilityName: god.Ability4,
-  //     iconUrl: god.godAbility4_URL,
-  //     description: god.Ability_4.Description.itemDescription.description,
-  //   },
-  //   {
-  //     id: god.AbilityId5,
-  //     abilityName: god.Ability5,
-  //     iconUrl: god.godAbility5_URL,
-  //     description: god.Ability_5.Description.itemDescription.description,
-  //   },
-  // ];
-
   return (
     <div>
       <div>
         {god ? (
           <div className={styles.godPage}>
             <div className={styles.overviewContainer}>
-              <p>{god.Lore}</p>
+              <p>{god.Lore.replaceAll("\\n\\n", "\n\n")}</p>
               <div>
                 <h2>{god.Name}</h2>
                 <h3>{god.Title}</h3>

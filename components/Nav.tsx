@@ -1,10 +1,12 @@
 import Link from "next/link";
 
+import styles from "@/styles/navbar.module.scss";
+
 interface NavProps {}
 
 const Nav: React.FC<NavProps> = () => {
   return (
-    <div>
+    <div className={styles.navContainer}>
       <Link href="/">Home</Link>
       <Link href="/gods">Gods</Link>
       {/* remove dev page later */}

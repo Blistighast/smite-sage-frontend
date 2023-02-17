@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from "@/styles/card.module.scss";
 import Link from "next/link";
 import SVG from "./lowerFrame.svg";
-import { ReactSVG } from "react-svg";
 
 interface LayoutProps {
   god: {

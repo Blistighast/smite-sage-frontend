@@ -4,16 +4,16 @@
 
 .overviewContainer {
   display: grid;
-  border: 2px solid gold;
+  border: 2px solid var(--primary-color);
   grid-template-columns: 1fr 1fr;
 }
 
 .abilitiesContainer {
   display: flex;
-  border: 2px solid gold;
+  border: 2px solid var(--primary-color);
 }
 
 .ability {
   padding: 1em;
-  border: 1px solid blue;
+  border: 1px solid var(--tertiary-color);
 }

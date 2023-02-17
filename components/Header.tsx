@@ -1,11 +1,11 @@
 import Logo from "./Logo";
 import Nav from "./Nav";
 
-interface HeaderProps {}
+import styles from "@/styles/navbar.module.scss";
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC = () => {
   return (
-    <div>
+    <div className={styles.headerContainer}>
       <Logo />
       <Nav />
     </div>

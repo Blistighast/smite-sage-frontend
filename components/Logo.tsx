@@ -1,10 +1,11 @@
-interface LogoProps {}
+import styles from "@/styles/navbar.module.scss";
+import Link from "next/link";
 
-const Logo = () => {
+const Logo: React.FC = () => {
   return (
-    <div>
-      <h1>SMITE SAGE</h1>
-    </div>
+    <Link href="/" className={styles.logoContainer}>
+      <h1 className={styles.logo}>SMITE SAGE</h1>
+    </Link>
   );
 };
 

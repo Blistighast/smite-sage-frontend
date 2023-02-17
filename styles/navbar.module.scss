@@ -1,0 +1,32 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(54, 54, 54);
+  padding: 1em;
+  color: var(--font-secondary);
+}
+
+.logoContainer {
+  text-decoration: none;
+}
+
+.logo {
+  border-bottom: 3px solid var(--primary-color);
+  color: var(--font-secondary);
+}
+
+.navContainer {
+  display: flex;
+  gap: 2em;
+  padding-right: 1em;
+}
+
+.navContainer a {
+  color: var(--font-secondary);
+  font-size: 1.5em;
+  margin: auto;
+  padding: 0 0.5em 0 0.5em;
+  // border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  text-decoration: none;
+}
