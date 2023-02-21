@@ -1,6 +1,8 @@
+import styles from "@/styles/footer.module.scss";
+
 const Footer = () => {
   return (
-    <footer className="footer-container">
+    <footer className={styles.footerContainer}>
       <p className="made-by">Made by Brian Guterl</p>
       <p className="hi-rez">SMITE is owned by Hi-Rez</p>
     </footer>
