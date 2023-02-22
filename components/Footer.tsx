@@ -1,10 +1,17 @@
-import styles from "@/styles/footer.module.scss";
+import styles from "@/styles/runners.module.scss";
 
 const Footer = () => {
   return (
     <footer className={styles.footerContainer}>
-      <p className="made-by">Made by Brian Guterl</p>
-      <p className="hi-rez">SMITE is owned by Hi-Rez</p>
+      <span>
+        <p className="made-by">Made by Brian Guterl</p>
+        <p className="hi-rez">SMITE is owned by Hi-Rez</p>
+      </span>
+      <p>
+        SmiteSage is not affiliated, associated, authorized, endorsed by, or in
+        any way officially connected with Smite, Hi-Rez, or any of their
+        subsidiaries or affiliates.
+      </p>
     </footer>
   );
 };

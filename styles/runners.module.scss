@@ -1,3 +1,4 @@
+// HEADER
 .headerContainer {
   display: flex;
   justify-content: space-between;
@@ -29,4 +30,18 @@
   // border-bottom: 2px solid var(--primary-color);
   border-bottom: 2px solid var(--primary-color);
   text-decoration: none;
+}
+
+// FOOTER
+.footerContainer {
+  background-color: var(--tertiary-color);
+  color: var(--font-secondary);
+  text-align: center;
+  padding: 1em;
+}
+
+.footerContainer span {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
 }

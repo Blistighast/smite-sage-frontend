@@ -1,6 +1,7 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.scss";
 import { useState } from "react";
+
+import styles from "@/styles/Home.module.scss";
 
 const serverUrl = "http://localhost:4000";
 
@@ -73,7 +74,7 @@ export default function Home() {
     <>
       <Head>
         <title>Smite Sage</title>
-        <meta name="description" content="For all your smite info needs" />
+        <meta name="description" content="For all your Smite info needs" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

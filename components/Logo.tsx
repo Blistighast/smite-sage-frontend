@@ -1,5 +1,6 @@
-import styles from "@/styles/navbar.module.scss";
 import Link from "next/link";
+
+import styles from "@/styles/runners.module.scss";
 
 const Logo: React.FC = () => {
   return (

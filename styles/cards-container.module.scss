@@ -7,4 +7,11 @@
 
 .search {
   display: grid;
+  margin: auto;
+  padding: 1em;
+}
+
+.search span {
+  display: flex;
+  gap: 2px;
 }

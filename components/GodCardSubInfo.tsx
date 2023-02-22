@@ -1,6 +1,11 @@
 import Image from "next/image";
 
-interface GodInfoProps {}
+interface GodInfoProps {
+  god: {
+    Pantheon: string;
+    Roles: string;
+  };
+}
 
 const GodCardSubInfo: React.FC<GodInfoProps> = ({ god }) => {
   return (

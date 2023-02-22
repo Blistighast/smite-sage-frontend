@@ -1,7 +1,7 @@
 import Logo from "./Logo";
 import Nav from "./Nav";
 
-import styles from "@/styles/navbar.module.scss";
+import styles from "@/styles/runners.module.scss";
 
 const Header: React.FC = () => {
   return (
