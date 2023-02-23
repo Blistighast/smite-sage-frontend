@@ -13,7 +13,6 @@ const GodsFilter: React.FC<any> = ({ gods, filteredGods, setFilteredGods }) => {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilteredGods(
       gods.filter((god: { Name: string }) =>
-        // god.Name.toLowerCase().includes(e.target.value.toLowerCase())
         god.Name.toLowerCase().startsWith(e.target.value.toLowerCase())
       )
     );

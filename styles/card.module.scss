@@ -10,6 +10,7 @@
   color: var(--font-secondary);
   text-transform: uppercase;
   text-decoration: none;
+  max-width: 150px;
   padding: none;
   box-shadow: var(--box-shadow);
 }
@@ -31,6 +32,7 @@
   position: relative;
   // top: -3rem;
   display: flex;
+  max-width: 150px;
   justify-content: space-between;
 }
 
@@ -45,6 +47,7 @@
 
 .lowerFrame p {
   padding: 0 1em 1em 1em;
+  font-size: 12px;
 }
 
 .pantheon img {
