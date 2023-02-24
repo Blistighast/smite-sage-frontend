@@ -27,7 +27,15 @@
   --darkGrey: #3a3a3a;
   --darkGray: var(--darkGrey)
   --offWhite: #ededed;
-  /* --quaternary-color: blue; */
+
+  --gold-gradient: linear-gradient(
+    to right,
+    #cb9b51 0,
+    #f6e27a 20%,
+    #f6f2c0 40%,
+    #f6e27a 60%,
+    #cb9b51 80%
+  );
 
   --font-primary: black;
   --font-secondary: white;
@@ -37,7 +45,8 @@
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --max-width: 1100px;
-  --box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.09);
+  --box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.25);
+  --card-width: 175px
   box-sizing: border-box;
   background-color: var(--secondary-color);
   /* makes font 10px, for easy sizing, but still overridable for accessability  */
@@ -52,8 +61,17 @@ body {
   padding: 0;
   max-width: var(--max-width);
   margin: auto;
-  border-left: 4px solid var(--primary-color);
-  border-right: 4px solid var(--primary-color);
+  border-left: 4px solid ;
+  border-right: 4px solid ;
+  border-image-source: repeating-linear-gradient(
+    to bottom,
+    #cb9b51 0%,
+    #f6e27a 4.5%,
+    #f6f2c0 5.0%,
+    #f6e27a 5.5%,
+    #cb9b51 7.8%
+  );
+  border-image-slice: 100;
   font-size: 1.5rem;
 }
 button {

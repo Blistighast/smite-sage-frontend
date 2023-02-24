@@ -21,18 +21,18 @@ const GodCard: React.FC<LayoutProps> = ({ god }) => {
     >
       <h3>{god.Name}</h3>
       <Image
-        className="godCardPic"
+        className={styles.godCardPic}
         // big picture
         // src={god.godCard_URL}
         // small picture
         src={god.godIcon_URL}
         alt={`picture of ${god.Name}`}
         // fill
-        width={150}
-        height={150}
+        width={160}
+        height={160}
       />
-      <svg width={150} height={100}>
-        <image href="/lowerFrame.svg" width={150} height={100} />
+      <svg width={180} height={100}>
+        <image href="/lowerFrame.svg" width={180} height={100} />
       </svg>
       <span className={styles.lowerFrame}>
         <div className="roles">
@@ -42,7 +42,6 @@ const GodCard: React.FC<LayoutProps> = ({ god }) => {
             width={40}
             height={40}
           />
-          <p>{god.Roles}</p>
         </div>
         <div className={styles.pantheon}>
           <Image
@@ -53,6 +52,7 @@ const GodCard: React.FC<LayoutProps> = ({ god }) => {
           />
           <p>{god.Pantheon}</p>
         </div>
+        <p>{god.Roles}</p>
       </span>
     </Link>
   );

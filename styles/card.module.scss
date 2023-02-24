@@ -1,8 +1,10 @@
 .card {
   display: grid;
+  // background-color: var(--tertiary-color);
   background-color: var(--tertiary-color);
-  border: 2px solid var(--primary-color);
-  border-radius: 5px;
+  // border: 2px solid var(--primary-color);
+  border-width: 3px;
+  border-style: solid;
 }
 
 .godCard {
@@ -10,7 +12,9 @@
   color: var(--font-secondary);
   text-transform: uppercase;
   text-decoration: none;
-  max-width: 150px;
+  max-width: var(--card-width);
+  border-image-source: var(--gold-gradient);
+  border-image-slice: 40;
   padding: none;
   box-shadow: var(--box-shadow);
 }
@@ -19,11 +23,18 @@
   text-align: center;
 }
 
+.godCardPic {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 15%;
+}
+
 .godCard svg {
   // need to figure out how to change color of actual svg
   background-color: transparent;
+  max-width: var(--card-width);
   position: absolute;
-  bottom: 2em;
+  bottom: 1em;
 }
 
 .lowerFrame {
@@ -31,32 +42,30 @@
   // background-repeat: no-repeat;
   position: relative;
   // top: -3rem;
-  display: flex;
-  max-width: 150px;
+  // display: flex;
+  max-width: var(--card-width);
   justify-content: space-between;
 }
 
 .lowerFrame img {
   position: absolute;
-  top: -4em;
-  padding: 0.5em;
+  top: -2.5em;
+  padding: 0.2em;
 
   background-color: var(--tertiary-color);
   border-radius: 100%;
 }
 
 .lowerFrame p {
-  padding: 0 1em 1em 1em;
-  font-size: 12px;
+  text-align: center;
+  margin: 0.25em;
+  // font-size: 12px;
 }
 
 .pantheon img {
   right: 0em;
 }
 
-// fixes cthuhlus multi word pantheon, but breaks the images, need to come back to fix those
-// .pantheon p {
-//   max-width: 60px;
-//   word-spacing: 5rem;
-//   overflow-wrap: break-word;
-// }
+.pantheon p {
+  font-size: 12px;
+}

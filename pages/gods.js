@@ -29,7 +29,9 @@ const Gods = () => {
       />
       <div className={`${styles.cardsContainer}`}>
         {filteredGods ? (
-          filteredGods.map((god) => <GodCard key={god._id} god={god} />)
+          filteredGods
+            .sort((a, b) => a.Name.localeCompare(b.Name))
+            .map((god) => <GodCard key={god._id} god={god} />)
         ) : (
           <p>Loading...</p>
         )}

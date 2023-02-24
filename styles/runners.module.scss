@@ -12,7 +12,9 @@
 }
 
 .logo {
-  border-bottom: 3px solid var(--primary-color);
+  border-bottom: 3px solid;
+  border-image-source: var(--gold-gradient);
+  border-image-slice: 20;
   color: var(--font-secondary);
 }
 
@@ -28,7 +30,9 @@
   margin: auto;
   padding: 0 0.5em 0 0.5em;
   // border-bottom: 2px solid var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid;
+  border-image-source: var(--gold-gradient);
+  border-image-slice: 20;
   text-decoration: none;
 }
 

@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+  padding-bottom: 1em;
 }
 
 .search {
@@ -14,4 +15,10 @@
 .search span {
   display: flex;
   gap: 2px;
+}
+
+.search input {
+  border: 3px solid;
+  border-image-source: var(--gold-gradient);
+  border-image-slice: 1;
 }
