@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "@/styles/card.module.scss";
 import Link from "next/link";
 
-interface LayoutProps {
+interface GodProps {
   god: {
     Name: string;
     Pantheon: string;
@@ -13,7 +13,7 @@ interface LayoutProps {
   };
 }
 
-const GodCard: React.FC<LayoutProps> = ({ god }) => {
+const GodCard: React.FC<GodProps> = ({ god }) => {
   return (
     <Link
       href={`/god/${god.id}`}

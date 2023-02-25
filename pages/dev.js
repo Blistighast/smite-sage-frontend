@@ -34,6 +34,12 @@ const DevPage = () => {
     console.log(data);
   };
 
+  const getItems = async () => {
+    const resp = await fetch(`${serverUrl}/getitems`);
+    const data = await resp.json();
+    console.log(data);
+  };
+
   const handlePing = () => {
     pingServer();
   };
@@ -50,15 +56,21 @@ const DevPage = () => {
     testSession();
   };
 
+  const handleListItems = () => {
+    getItems();
+  };
+
   const handleGetPatchNotes = () => {
     getPatchNotes();
   };
+
   return (
     <div>
       <button onClick={() => handlePing()}>Ping server</button>
       <button onClick={() => handleSmitePing()}>Ping Smite API</button>
       <button onClick={() => handleCreateSession()}>Create Session</button>
       <button onClick={() => handleTestSession()}>Test Session</button>
+      <button onClick={() => handleListItems()}>List Items</button>
       <button onClick={() => handleGetPatchNotes()}>Get Patch Notes</button>
     </div>
   );

@@ -9,6 +9,7 @@ const Nav: React.FC<NavProps> = () => {
     <div className={styles.navContainer}>
       <Link href="/">Home</Link>
       <Link href="/gods">Gods</Link>
+      <Link href="/items">Items</Link>
       {/* remove dev page later */}
       <Link href="/dev">Dev</Link>
     </div>
