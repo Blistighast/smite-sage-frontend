@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 
-import GodPage from "../../components/GodPage";
+import ItemPage from "../../components/ItemPage";
 
-export default function SingleGodPage() {
+export default function SingleItemPage() {
   const router = useRouter();
 
-  return <GodPage id={router.query.id} />;
+  return <ItemPage id={router.query.id} />;
 }
 
 export async function getServerSideProps() {

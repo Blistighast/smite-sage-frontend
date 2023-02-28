@@ -19,7 +19,6 @@ const Items: React.FC<ItemProps> = () => {
     const resp = await fetch(`${serverUrl}/getitems`);
     const data = await resp.json();
     setItems(data);
-    console.log(data[1]);
   };
 
   useEffect(() => {
