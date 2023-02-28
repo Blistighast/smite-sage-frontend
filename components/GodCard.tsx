@@ -1,6 +1,6 @@
 import Image from "next/image";
-import styles from "@/styles/card.module.scss";
 import Link from "next/link";
+import styles from "@/styles/card.module.scss";
 
 interface GodProps {
   god: {

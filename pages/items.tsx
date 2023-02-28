@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import ItemCard from "./../components/ItemCard";
+
+import styles from "@/styles/cards-container.module.scss";
 
 const serverUrl = "http://localhost:4000";
 
@@ -16,6 +19,7 @@ const Items: React.FC<ItemProps> = () => {
     const resp = await fetch(`${serverUrl}/getitems`);
     const data = await resp.json();
     setItems(data);
+    console.log(data[1]);
   };
 
   useEffect(() => {
@@ -24,9 +28,9 @@ const Items: React.FC<ItemProps> = () => {
 
   return (
     <div>
-      <div>
+      <div className={`${styles.cardsContainer}`}>
         {items ? (
-          items.map((item) => <div key={item.ItemId}>{item.DeviceName}</div>)
+          items.map((item) => <ItemCard key={item.ItemId} item={item} />)
         ) : (
           <p>Loading...</p>
         )}

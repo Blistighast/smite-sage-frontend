@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import styles from "@/styles/cards-container.module.scss";
 import GodCard from "./../components/GodCard";
 import GodsFilter from "./../components/GodsFilter";
+
+import styles from "@/styles/cards-container.module.scss";
 
 const serverUrl = "http://localhost:4000";
 

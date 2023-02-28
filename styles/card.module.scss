@@ -1,17 +1,15 @@
 .card {
   display: grid;
-  // background-color: var(--tertiary-color);
   background-color: var(--tertiary-color);
-  // border: 2px solid var(--primary-color);
-  border-width: 3px;
-  border-style: solid;
+  color: var(--font-secondary);
+  text-decoration: none;
 }
 
 .godCard {
   position: relative;
-  color: var(--font-secondary);
   text-transform: uppercase;
-  text-decoration: none;
+  border-width: 3px;
+  border-style: solid;
   max-width: var(--card-width);
   border-image-source: var(--gold-gradient);
   border-image-slice: 40;
@@ -68,4 +66,8 @@
 
 .pantheon p {
   font-size: 12px;
+}
+
+.itemCard {
+  display: flex;
 }
