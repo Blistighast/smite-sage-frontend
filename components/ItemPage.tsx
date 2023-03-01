@@ -11,13 +11,12 @@ interface Item {
 }
 
 const ItemPage: React.FC<ItemProps> = ({ id }) => {
-  const [item, setItem] = useState<Item | []>([]);
+  const [item, setItem] = useState<Item>();
 
   const fetchItem = async () => {
     const resp = await fetch(`http://localhost:4000/items/${id}`);
     const data = await resp.json();
-    console.log(data);
-    setItem(...data);
+    setItem(data[0]);
   };
 
   useEffect(() => {
