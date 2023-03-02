@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/indexOld.tsx",
-    "pages/god/[id].js",
+    "pages/god/[id].tsx",
     "components/GodPage.js"
   ],
   "exclude": ["node_modules"]

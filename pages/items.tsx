@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import ItemCard from "./../components/ItemCard";
 
 import styles from "@/styles/cards-container.module.scss";
-import GodsFilter from "@/components/GodsFilter";
 
 const serverUrl = "http://localhost:4000";
 
@@ -32,7 +31,6 @@ const Items: React.FC = () => {
 
   return (
     <div>
-      <GodsFilter />
       {items ? (
         <div className={`${styles.itemsContainer}`}>
           <h2>Consumables</h2>

@@ -6,6 +6,8 @@ interface ItemProps {
 interface Item {
   ItemId: string;
   DeviceName: string;
+  itemIcon_URL: string;
+  Price: number;
 
   prevState: [];
 }

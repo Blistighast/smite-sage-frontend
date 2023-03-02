@@ -1,5 +1,6 @@
-import styles from "@/styles/cards-container.module.scss";
 import { useRouter } from "next/router";
+
+import styles from "@/styles/cards-container.module.scss";
 
 const GodsFilter: React.FC<any> = ({ gods, filteredGods, setFilteredGods }) => {
   const router = useRouter();
