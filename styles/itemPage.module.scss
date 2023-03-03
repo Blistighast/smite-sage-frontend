@@ -1,0 +1,15 @@
+.itemPage {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  color: var(--font-secondary);
+}
+
+.itemSideCard {
+  border: 2px solid var(--primary-color);
+  text-align: center;
+}
+
+.itemCardBottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
