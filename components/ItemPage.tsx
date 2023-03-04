@@ -6,6 +6,12 @@ import styles from "@/styles/itemPage.module.scss";
 interface ItemProps {
   id: string | string[] | undefined;
 }
+
+interface MenuItem {
+  Description: string;
+  Value: string;
+}
+
 interface Item {
   ItemId: number;
   DeviceName: string;
@@ -17,6 +23,7 @@ interface Item {
   ItemDescription: {
     Description: string;
     SecondaryDescription: string;
+    Menuitems: MenuItem[];
   };
 
   prevState: [];
@@ -56,13 +63,22 @@ const ItemPage: React.FC<ItemProps> = ({ id }) => {
             <span className={styles.itemCardBottom}>
               <div className={styles.itemSideTitles}>
                 <p>Type</p>
+                <p>Tier</p>
                 <p>Price</p>
                 <p>Desc</p>
+                <p>Stats</p>
               </div>
               <div className={styles.itemSideInfo}>
                 <p>{item.Type}</p>
+                <p>Tier {item.ItemTier}</p>
                 <p>{item.Price}</p>
                 <p>{item.ShortDesc}</p>
+                {item.ItemDescription.Menuitems.map((menuItem, i) => (
+                  <div key={i}>
+                    <p>{menuItem.Value}</p>
+                    <p>{menuItem.Description}</p>
+                  </div>
+                ))}
               </div>
             </span>
           </div>
