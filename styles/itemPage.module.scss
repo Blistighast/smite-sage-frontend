@@ -4,6 +4,10 @@
   color: var(--font-secondary);
 }
 
+.itemMain {
+  margin: 0 1em 0 1em;
+}
+
 .itemSideCard {
   border-left: 2px solid grey;
   text-align: center;
@@ -17,8 +21,15 @@
 
 .itemSideTitles {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
   border-right: 2px solid grey;
+}
+
+.itemBottomStats {
+  grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+}
+
+.itemBottomNoStats {
+  grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .itemSideTitles p {
@@ -27,7 +38,6 @@
 
 .itemSideInfo {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
 }
 
 .itemSideInfo p {

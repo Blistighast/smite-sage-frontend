@@ -42,6 +42,10 @@ const ItemPage: React.FC<ItemProps> = ({ id }) => {
     fetchItem();
   }, []);
 
+  const statsDisplay = item?.ItemDescription.Menuitems[0]
+    ? styles.itemBottomStats
+    : styles.itemBottomNoStats;
+
   return (
     <div>
       {item ? (
@@ -61,18 +65,18 @@ const ItemPage: React.FC<ItemProps> = ({ id }) => {
               height={200}
             />
             <span className={styles.itemCardBottom}>
-              <div className={styles.itemSideTitles}>
+              <div className={`${styles.itemSideTitles} ${statsDisplay}`}>
                 <p>Type</p>
                 <p>Tier</p>
                 <p>Price</p>
                 <p>Desc</p>
-                <p>Stats</p>
+                {item.ItemDescription.Menuitems[0] ? <p>Stats</p> : null}
               </div>
-              <div className={styles.itemSideInfo}>
+              <div className={`${styles.itemSideInfo} ${statsDisplay}`}>
                 <p>{item.Type}</p>
                 <p>Tier {item.ItemTier}</p>
                 <p>{item.Price}</p>
-                <p>{item.ShortDesc}</p>
+                <p>{item.ShortDesc.replace(/[.]/g, "")}</p>
                 <div className={styles.stats}>
                   {item.ItemDescription.Menuitems.map((menuItem, i) => (
                     <div key={i}>
