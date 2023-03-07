@@ -73,12 +73,14 @@ const ItemPage: React.FC<ItemProps> = ({ id }) => {
                 <p>Tier {item.ItemTier}</p>
                 <p>{item.Price}</p>
                 <p>{item.ShortDesc}</p>
-                {item.ItemDescription.Menuitems.map((menuItem, i) => (
-                  <div key={i}>
-                    <p>{menuItem.Value}</p>
-                    <p>{menuItem.Description}</p>
-                  </div>
-                ))}
+                <div className={styles.stats}>
+                  {item.ItemDescription.Menuitems.map((menuItem, i) => (
+                    <div key={i}>
+                      <p>{menuItem.Value}</p>
+                      <p>{menuItem.Description}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </span>
           </div>

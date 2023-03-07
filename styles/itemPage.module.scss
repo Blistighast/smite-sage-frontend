@@ -5,11 +5,44 @@
 }
 
 .itemSideCard {
-  border: 2px solid var(--primary-color);
+  border-left: 2px solid grey;
   text-align: center;
 }
 
 .itemCardBottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin: 1em;
+}
+
+.itemSideTitles {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+  border-right: 2px solid grey;
+}
+
+.itemSideTitles p {
+  align-self: center;
+}
+
+.itemSideInfo {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+}
+
+.itemSideInfo p {
+  align-self: center;
+}
+
+.itemSideInfo div {
+  align-self: center;
+}
+
+.stats div {
+  margin: 0.5em 0 0.5em 0;
+}
+
+.stats p {
+  margin: 0;
+  font-size: 80%;
 }
