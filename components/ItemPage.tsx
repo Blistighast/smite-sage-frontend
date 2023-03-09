@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import styles from "@/styles/itemPage.module.scss";
+import Link from "next/link";
 
 interface ItemProps {
   id: string | string[] | undefined;
@@ -51,7 +52,11 @@ const ItemPage: React.FC<ItemProps> = ({ id }) => {
       {item ? (
         <div className={styles.itemPage}>
           <div className={styles.itemMain}>
-            <h2>Details</h2>
+            <p>
+              {item.DeviceName} is an <Link href={`/items/`}>item</Link> in{" "}
+              <Link href={`/`}>Smite</Link>
+            </p>
+            <h3>Details</h3>
             <hr />
             <p>{item.ItemDescription.Description}</p>
             <p>{item.ItemDescription.SecondaryDescription}</p>
