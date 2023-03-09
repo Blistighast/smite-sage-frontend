@@ -39,6 +39,7 @@
 
   --font-primary: black;
   --font-secondary: white;
+  --font-link: rgb(121, 205, 233);
 
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",

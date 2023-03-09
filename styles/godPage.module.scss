@@ -1,11 +1,17 @@
 .godPage {
   display: grid;
+  color: var(--font-secondary);
 }
 
 .overviewContainer {
   display: grid;
   border: 2px solid var(--primary-color);
   grid-template-columns: 1fr 1fr;
+}
+
+.overviewContainer div p a {
+  text-decoration: none;
+  color: var(--font-link);
 }
 
 .abilitiesContainer {

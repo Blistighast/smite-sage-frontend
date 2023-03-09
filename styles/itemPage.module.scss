@@ -8,6 +8,11 @@
   margin: 0 1em 0 1em;
 }
 
+.itemMain p a {
+  text-decoration: none;
+  color: var(--font-link);
+}
+
 .itemSideCard {
   border-left: 2px solid grey;
   text-align: center;

@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import styles from "@/styles/itemPage.module.scss";
 import Link from "next/link";
+import ItemCardBottom from "./ItemCardBottom";
 
 interface ItemProps {
   id: string | string[] | undefined;
@@ -21,6 +22,8 @@ interface Item {
   ShortDesc: string;
   Type: string;
   ItemTier: number;
+  StartingItem: boolean;
+  Glyph: string;
   ItemDescription: {
     Description: string;
     SecondaryDescription: string;
@@ -43,10 +46,6 @@ const ItemPage: React.FC<ItemProps> = ({ id }) => {
     fetchItem();
   }, []);
 
-  const statsDisplay = item?.ItemDescription.Menuitems[0]
-    ? styles.itemBottomStats
-    : styles.itemBottomNoStats;
-
   return (
     <div>
       {item ? (
@@ -54,7 +53,7 @@ const ItemPage: React.FC<ItemProps> = ({ id }) => {
           <div className={styles.itemMain}>
             <p>
               {item.DeviceName} is an <Link href={`/items/`}>item</Link> in{" "}
-              <Link href={`/`}>Smite</Link>
+              <Link href={`/`}>Smite</Link>.
             </p>
             <h3>Details</h3>
             <hr />
@@ -69,29 +68,7 @@ const ItemPage: React.FC<ItemProps> = ({ id }) => {
               width={200}
               height={200}
             />
-            <span className={styles.itemCardBottom}>
-              <div className={`${styles.itemSideTitles} ${statsDisplay}`}>
-                <p>Type</p>
-                <p>Tier</p>
-                <p>Price</p>
-                <p>Desc</p>
-                {item.ItemDescription.Menuitems[0] ? <p>Stats</p> : null}
-              </div>
-              <div className={`${styles.itemSideInfo} ${statsDisplay}`}>
-                <p>{item.Type}</p>
-                <p>Tier {item.ItemTier}</p>
-                <p>{item.Price}</p>
-                <p>{item.ShortDesc.replace(/[.]/g, "")}</p>
-                <div className={styles.stats}>
-                  {item.ItemDescription.Menuitems.map((menuItem, i) => (
-                    <div key={i}>
-                      <p>{menuItem.Value}</p>
-                      <p>{menuItem.Description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </span>
+            <ItemCardBottom item={item} />
           </div>
         </div>
       ) : (

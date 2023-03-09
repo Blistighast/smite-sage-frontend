@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 import styles from "@/styles/godPage.module.scss";
+import Link from "next/link";
 
 export default function GodPage({ id }) {
   const [god, setGod] = useState();
@@ -58,7 +59,15 @@ export default function GodPage({ id }) {
         {god ? (
           <div className={styles.godPage}>
             <div className={styles.overviewContainer}>
-              <p>{god.Lore.replaceAll("\\n\\n", "\n\n")}</p>
+              <div>
+                <p>
+                  {god.Name} is a <Link href={`/gods/`}>god</Link> in{" "}
+                  <Link href={`/`}>Smite</Link>.
+                </p>
+                <h3>Lore</h3>
+                <hr />
+                <p>{god.Lore.replaceAll("\\n\\n", "\n\n")}</p>
+              </div>
               <div>
                 <h2>{god.Name}</h2>
                 <h3>{god.Title}</h3>
