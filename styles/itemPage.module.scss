@@ -21,7 +21,7 @@
 .itemCardBottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 1em;
+  margin: 0.5em;
 }
 
 .itemSideTitles {
@@ -29,24 +29,34 @@
   border-right: 2px solid grey;
 }
 
-.itemBottomStats {
-  grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+.itemConsumable {
+  grid-template-rows: 1.5fr 1.5fr 1.5fr;
 }
 
-.itemBottomNoStats {
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+.itemRelic {
+  grid-template-rows: 1fr 1fr 1fr 1.5fr;
+}
+
+.itemPassive {
+  grid-template-rows: 1fr 1fr 1fr 1.5fr 2fr;
+}
+
+.itemEvolved {
+  grid-template-rows: 1fr 1fr 1.5fr 2fr;
 }
 
 .itemSideTitles p {
+  margin: 0.5em 0 0.5em 0;
   align-self: center;
 }
 
 .itemSideInfo {
   display: grid;
-  margin-left: 1em;
+  margin-left: 0.5em;
 }
 
 .itemSideInfo p {
+  margin: 0.5em 0 0.5em 0;
   align-self: center;
 }
 

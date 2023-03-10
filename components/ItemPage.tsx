@@ -58,7 +58,12 @@ const ItemPage: React.FC<ItemProps> = ({ id }) => {
             <h3>Details</h3>
             <hr />
             <p>{item.ItemDescription.Description}</p>
-            <p>{item.ItemDescription.SecondaryDescription}</p>
+            <p>
+              {item.ItemDescription.SecondaryDescription?.replace(
+                "<n>",
+                "\n\n"
+              )}
+            </p>
           </div>
           <div className={styles.itemSideCard}>
             <h2>{item.DeviceName}</h2>
