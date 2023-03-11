@@ -1,9 +1,14 @@
 // HEADER
 .headerContainer {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: var(--max-width);
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   background-color: var(--tertiary-color);
-  padding: 1em;
+  padding: 0 0.5em 0 0.5em;
   color: var(--font-secondary);
 }
 
@@ -38,6 +43,11 @@
 
 // FOOTER
 .footerContainer {
+  position: absolute;
+  bottom: 0;
+  width: var(--max-width);
+  height: 10em;
+  box-sizing: border-box;
   background-color: var(--tertiary-color);
   color: var(--font-secondary);
   text-align: center;

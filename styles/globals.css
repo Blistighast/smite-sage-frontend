@@ -21,6 +21,7 @@
   --primary-color: gold;
   --secondary-color: #3a3a3a;
   --tertiary-color: black;
+  --background-color: rgb(54, 54, 54, .95);
   --teal: #44acac;
   --darkTeal: #0b4d53;
   --orange: #e83e26;
@@ -49,7 +50,11 @@
   --box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.25);
   --card-width: 175px
   box-sizing: border-box;
-  background-color: var(--secondary-color);
+  /* background-color: var(--secondary-color); */
+  background: url("/smite-background-ganesha.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+
   /* makes font 10px, for easy sizing, but still overridable for accessability  */
   font-size: 62.5%; 
 }
@@ -61,9 +66,15 @@ body {
   'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   padding: 0;
   max-width: var(--max-width);
+  width: 100%;
+  height: 100%;
   margin: auto;
+  /* causes runners to go over border line, but also fixes footer to bottom without scroll bar */
+  box-sizing: border-box; 
+  padding-top: 90px;
   border-left: 4px solid ;
   border-right: 4px solid ;
+  background-color: var(--background-color);
   border-image-source: repeating-linear-gradient(
     to bottom,
     #cb9b51 0%,
@@ -74,10 +85,16 @@ body {
   );
   border-image-slice: 100;
   font-size: 1.5rem;
+  position: relative;
+  min-height: 100vh;
 }
 button {
   font-family: 'poppins-medium', --apple-system, BlinkMacSystemFont, 
   'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main {
+  padding-bottom: 10em;
 }
 /* :root {
   --max-width: 1100px;
