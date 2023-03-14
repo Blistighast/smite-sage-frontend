@@ -69,7 +69,6 @@ body {
   'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   max-width: var(--max-width);
   margin: auto;
-  margin-top: 90px;
   position: relative;
   font-size: 1.5rem;
 }
@@ -81,6 +80,7 @@ button {
 main {
   min-height: 100vh;
   padding-bottom: 10em;
+  padding-top: 90px;
   background-color: var(--background-color);
   border-left: 4px solid ;
   border-right: 4px solid ;
