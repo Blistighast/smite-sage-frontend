@@ -4,11 +4,10 @@
   top: 0;
   z-index: 10;
   width: var(--max-width);
-  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   background-color: var(--tertiary-color);
-  padding: 0 0.5em 0 0.5em;
+  padding: 1.5em;
   color: var(--font-secondary);
 }
 
@@ -26,7 +25,7 @@
 .navContainer {
   display: flex;
   gap: 2em;
-  padding-right: 1em;
+  // padding-right: 1em;
 }
 
 .navContainer a {
@@ -47,7 +46,6 @@
   bottom: 0;
   width: var(--max-width);
   height: 10em;
-  box-sizing: border-box;
   background-color: var(--tertiary-color);
   color: var(--font-secondary);
   text-align: center;
@@ -58,4 +56,8 @@
   display: flex;
   justify-content: center;
   gap: 2em;
+}
+
+.footerContainer p {
+  margin: 5px;
 }

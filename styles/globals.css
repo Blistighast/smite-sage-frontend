@@ -20,7 +20,7 @@
 :root {
   --primary-color: gold;
   --secondary-color: #3a3a3a;
-  --tertiary-color: black;
+  --tertiary-color: rgb(3, 19, 41);
   --background-color: rgb(54, 54, 54, .95);
   --teal: #44acac;
   --darkTeal: #0b4d53;
@@ -51,7 +51,8 @@
   --card-width: 175px
   box-sizing: border-box;
   /* background-color: var(--secondary-color); */
-  background: url("/smite-background-ganesha.jpg");
+  background: url("/smite-background-ganesha.jpg") black;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
 
@@ -59,22 +60,30 @@
   font-size: 62.5%; 
 }
 *, *:before,*:after {
-  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
   font-family: 'poppins-medium', --apple-system, BlinkMacSystemFont, 
   'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  padding: 0;
   max-width: var(--max-width);
-  width: 100%;
-  height: 100%;
   margin: auto;
-  /* causes runners to go over border line, but also fixes footer to bottom without scroll bar */
-  box-sizing: border-box; 
-  padding-top: 90px;
+  margin-top: 90px;
+  position: relative;
+  font-size: 1.5rem;
+}
+button {
+  font-family: 'poppins-medium', --apple-system, BlinkMacSystemFont, 
+  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  padding-bottom: 10em;
+  background-color: var(--background-color);
   border-left: 4px solid ;
   border-right: 4px solid ;
-  background-color: var(--background-color);
   border-image-source: repeating-linear-gradient(
     to bottom,
     #cb9b51 0%,
@@ -84,17 +93,8 @@ body {
     #cb9b51 7.8%
   );
   border-image-slice: 100;
-  font-size: 1.5rem;
-  position: relative;
-  min-height: 100vh;
-}
-button {
-  font-family: 'poppins-medium', --apple-system, BlinkMacSystemFont, 
-  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
 
-main {
-  padding-bottom: 10em;
+  
 }
 /* :root {
   --max-width: 1100px;
