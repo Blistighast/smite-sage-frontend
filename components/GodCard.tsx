@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/card.module.scss";
+import LowerFrameSvg from "./LowerFrameSvg";
 
 interface GodProps {
   god: {
@@ -31,24 +32,30 @@ const GodCard: React.FC<GodProps> = ({ god }) => {
         width={160}
         height={160}
       />
-      <svg width={180} height={100}>
+      {/* <svg width={180} height={100}>
         <image href="/lowerFrame.svg" width={180} height={100} />
-      </svg>
+      </svg> */}
+      <LowerFrameSvg
+        // className={styles.svg}
+        width={180}
+        height={100}
+        color={"#031329"}
+      />
       <span className={styles.lowerFrame}>
         <div className="roles">
           <Image
             src={`/class-icons/${god.Roles}.webp`}
             alt="Role Icon"
-            width={40}
-            height={40}
+            width={43}
+            height={43}
           />
         </div>
         <div className={styles.pantheon}>
           <Image
             src={`/pantheon_icons/${god.Pantheon}.webp`}
             alt="Pantheon Icon"
-            width={40}
-            height={40}
+            width={43}
+            height={43}
           />
           <p>{god.Pantheon}</p>
         </div>

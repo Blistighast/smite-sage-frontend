@@ -19,6 +19,7 @@
 
 .godCard h3 {
   text-align: center;
+  padding: 0.5em;
 }
 
 .godCardPic {
@@ -47,8 +48,9 @@
 
 .lowerFrame img {
   position: absolute;
-  top: -2.5em;
+  top: -2.7em;
   padding: 0.2em;
+  margin: 0 0.2em 0 0.2em;
 
   background-color: var(--tertiary-color);
   border-radius: 100%;
@@ -57,7 +59,6 @@
 .lowerFrame p {
   text-align: center;
   margin: 0.25em;
-  // font-size: 12px;
 }
 
 .pantheon img {

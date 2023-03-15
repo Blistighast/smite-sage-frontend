@@ -25,7 +25,8 @@
     "**/*.tsx",
     "pages/indexOld.tsx",
     "pages/god/[id].tsx",
-    "components/GodPage.js"
+    "components/GodPage.js",
+    "components/LowerFrameSvg.js"
   ],
   "exclude": ["node_modules"]
 }
