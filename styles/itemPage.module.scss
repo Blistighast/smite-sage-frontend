@@ -8,6 +8,11 @@
   margin: 0 1em 0 1em;
 }
 
+.itemMain p {
+  margin: 1em 0 1em 0;
+  white-space: pre-line;
+}
+
 .itemMain p a {
   text-decoration: none;
   color: var(--font-link);
@@ -16,6 +21,10 @@
 .itemSideCard {
   border-left: 2px solid grey;
   text-align: center;
+}
+
+.itemSideCard h2 {
+  margin: 0.5em 0 0.5em 0;
 }
 
 .itemCardBottom {

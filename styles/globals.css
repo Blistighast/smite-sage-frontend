@@ -50,7 +50,6 @@
   --box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.25);
   --card-width: 175px
   box-sizing: border-box;
-  /* background-color: var(--secondary-color); */
   background: url("/smite-background-ganesha.jpg") black;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -79,8 +78,8 @@ button {
 
 main {
   min-height: 100vh;
-  padding-bottom: 10em;
-  padding-top: 90px;
+  padding-top: 7em;
+  padding-bottom: 7em;
   background-color: var(--background-color);
   border-left: 4px solid ;
   border-right: 4px solid ;
@@ -93,8 +92,6 @@ main {
     #cb9b51 7.8%
   );
   border-image-slice: 100;
-
-  
 }
 /* :root {
   --max-width: 1100px;

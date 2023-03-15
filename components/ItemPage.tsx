@@ -47,7 +47,7 @@ const ItemPage: React.FC<ItemProps> = ({ id }) => {
   }, []);
 
   return (
-    <div>
+    <>
       {item ? (
         <div className={styles.itemPage}>
           <div className={styles.itemMain}>
@@ -62,7 +62,7 @@ const ItemPage: React.FC<ItemProps> = ({ id }) => {
               {item.ItemDescription.SecondaryDescription?.replace(
                 "<n>",
                 "\n\n"
-              )}
+              ).replaceAll(/<.*?>/g, "")}
             </p>
           </div>
           <div className={styles.itemSideCard}>
@@ -79,7 +79,7 @@ const ItemPage: React.FC<ItemProps> = ({ id }) => {
       ) : (
         <div>Loading...</div>
       )}
-    </div>
+    </>
   );
 };
 
