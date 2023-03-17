@@ -32,15 +32,7 @@ const GodCard: React.FC<GodProps> = ({ god }) => {
         width={160}
         height={160}
       />
-      {/* <svg width={180} height={100}>
-        <image href="/lowerFrame.svg" width={180} height={100} />
-      </svg> */}
-      <LowerFrameSvg
-        // className={styles.svg}
-        width={180}
-        height={100}
-        color={"#031329"}
-      />
+      <LowerFrameSvg width={180} height={100} color={"#031329"} />
       <span className={styles.lowerFrame}>
         <div className="roles">
           <Image
