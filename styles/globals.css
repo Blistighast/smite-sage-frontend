@@ -99,6 +99,11 @@ main {
     border-image-slice: 100;
     z-index: -10;
 }
+
+input::placeholder {
+  color: lightgrey;
+}
+
 /* :root {
   --max-width: 1100px;
   --border-radius: 12px;
