@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import styles from "@/styles/godPage.module.scss";
 import Link from "next/link";
+import GodSkin from "./GodSkin";
 
 export default function GodPage({ id }) {
   const [god, setGod] = useState();
@@ -116,10 +117,12 @@ export default function GodPage({ id }) {
                 </div>
               ))}
             </div>
-            <div>
-              {god.skins.map((skin) => (
-                <p key={skin.skin_id1}>{skin.skin_name}</p>
-              ))}
+            <div className={styles.skinContainer}>
+              {god.skins
+                .filter((skin) => skin.godSkin_URL)
+                .map((skin) => (
+                  <GodSkin key={skin.skin_id1} skin={skin} />
+                ))}
             </div>
           </div>
         ) : (

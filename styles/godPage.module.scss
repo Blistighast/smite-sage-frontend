@@ -24,3 +24,8 @@
   padding: 1em;
   border: 1px solid var(--tertiary-color);
 }
+
+.skinContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
