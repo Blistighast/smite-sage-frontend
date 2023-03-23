@@ -129,10 +129,8 @@ export default function GodPage({ id }) {
               ))}
             </div>
             <div>
-              {skins.map((skin) => (
-                <div key={skin.skin_id1}>
-                  <p>{skin.skin_name}</p>
-                </div>
+              {god.skins.map((skin) => (
+                <p key={skin.skin_id1}>{skin.skin_name}</p>
               ))}
             </div>
           </div>
