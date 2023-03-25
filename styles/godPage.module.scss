@@ -6,7 +6,7 @@
 .overviewContainer {
   display: grid;
   border: 2px solid var(--primary-color);
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
 }
 
 .overviewContainer div p a {
@@ -15,8 +15,8 @@
 }
 
 .abilitiesContainer {
-  display: flex;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   border: 2px solid var(--primary-color);
 }
 
@@ -28,4 +28,24 @@
 .skinContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin: 1em;
+}
+
+.skinCard {
+  border: 2px solid var(--tertiary-color);
+  border-radius: 4px;
+  text-align: center;
+  padding: 0.2em 0;
+}
+.skinCard h3 {
+  text-decoration: underline var(--tertiary-color) 3px;
+}
+
+.skinCard span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
 }

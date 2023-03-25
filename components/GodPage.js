@@ -7,6 +7,7 @@ import Link from "next/link";
 import GodSkin from "./GodSkin";
 
 export default function GodPage({ id }) {
+  const skinSortOrder = ["Normal", "Exclusive", "Limited"];
   const [god, setGod] = useState();
   const [godAbilities, setGodAbilities] = useState([]);
 
@@ -14,44 +15,42 @@ export default function GodPage({ id }) {
     const resp = await fetch(`http://localhost:4000/gods/${id}`);
     const data = await resp.json();
     setGod(...data);
+    setGodAbilities([
+      {
+        id: data[0].AbilityId1,
+        abilityName: data[0].Ability1,
+        iconUrl: data[0].godAbility1_URL,
+        description: data[0].Ability_1.Description.itemDescription.description,
+      },
+      {
+        id: data[0].AbilityId2,
+        abilityName: data[0].Ability2,
+        iconUrl: data[0].godAbility2_URL,
+        description: data[0].Ability_2.Description.itemDescription.description,
+      },
+      {
+        id: data[0].AbilityId3,
+        abilityName: data[0].Ability3,
+        iconUrl: data[0].godAbility3_URL,
+        description: data[0].Ability_3.Description.itemDescription.description,
+      },
+      {
+        id: data[0].AbilityId4,
+        abilityName: data[0].Ability4,
+        iconUrl: data[0].godAbility4_URL,
+        description: data[0].Ability_4.Description.itemDescription.description,
+      },
+      {
+        id: data[0].AbilityId5,
+        abilityName: data[0].Ability5,
+        iconUrl: data[0].godAbility5_URL,
+        description: data[0].Ability_5.Description.itemDescription.description,
+      },
+    ]);
   };
 
   useEffect(() => {
     fetchGod();
-    if (god) {
-      setGodAbilities([
-        {
-          id: god.AbilityId1,
-          abilityName: god.Ability1,
-          iconUrl: god.godAbility1_URL,
-          description: god.Ability_1.Description.itemDescription.description,
-        },
-        {
-          id: god.AbilityId2,
-          abilityName: god.Ability2,
-          iconUrl: god.godAbility2_URL,
-          description: god.Ability_2.Description.itemDescription.description,
-        },
-        {
-          id: god.AbilityId3,
-          abilityName: god.Ability3,
-          iconUrl: god.godAbility3_URL,
-          description: god.Ability_3.Description.itemDescription.description,
-        },
-        {
-          id: god.AbilityId4,
-          abilityName: god.Ability4,
-          iconUrl: god.godAbility4_URL,
-          description: god.Ability_4.Description.itemDescription.description,
-        },
-        {
-          id: god.AbilityId5,
-          abilityName: god.Ability5,
-          iconUrl: god.godAbility5_URL,
-          description: god.Ability_5.Description.itemDescription.description,
-        },
-      ]);
-    }
   }, []);
 
   return (
@@ -120,6 +119,11 @@ export default function GodPage({ id }) {
             <div className={styles.skinContainer}>
               {god.skins
                 .filter((skin) => skin.godSkin_URL)
+                .sort(
+                  (a, b) =>
+                    skinSortOrder.indexOf(a.obtainability) -
+                    skinSortOrder.indexOf(b.obtainability)
+                )
                 .map((skin) => (
                   <GodSkin key={skin.skin_id1} skin={skin} />
                 ))}

@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import styles from "@/styles/godPage.module.scss";
+
 interface SkinProps {
   skin: {
     skin_id1: number;
@@ -15,17 +17,28 @@ interface SkinProps {
 
 const GodSkin: React.FC<SkinProps> = ({ skin }) => {
   return (
-    <div>
-      <h4>{skin.skin_name}</h4>
+    <div className={styles.skinCard}>
+      <h3>{skin.skin_name}</h3>
       <p>{skin.obtainability}</p>
       <Image
         src={skin.godSkin_URL}
         alt={skin.skin_name}
-        width={200}
-        height={200}
+        width={250}
+        height={250}
       />
-      <p>Favor: {skin.price_favor}</p>
-      <p>Gems: {skin.price_gems}</p>
+      <span>
+        <p>Favor: {skin.price_favor}</p>
+        <Image
+          src={"/icons/favor.webp"}
+          alt="favor icon"
+          width={30}
+          height={30}
+        />
+      </span>
+      <span>
+        <p>Gems: {skin.price_gems}</p>
+        <Image src={"/icons/gem.png"} alt="gem icon" width={30} height={30} />
+      </span>
     </div>
   );
 };
