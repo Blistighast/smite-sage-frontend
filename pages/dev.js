@@ -1,77 +1,91 @@
 //page to test server
+import { useState } from "react";
+
+import styles from "@/styles/dev.module.scss";
 
 const serverUrl = "http://localhost:4000";
 
 const DevPage = () => {
-  const pingServer = async () => {
-    // const resp = await fetch("http://localhost:4000/api");
+  const [playerSearch, setPlayerSearch] = useState();
+
+  const handlePing = async () => {
     const resp = await fetch(`${serverUrl}/api`);
     const data = await resp.json();
     console.log(data);
   };
 
-  const pingSmiteServer = async () => {
+  const handleSmitePing = async () => {
     const resp = await fetch(`${serverUrl}/smiteapi`);
     const data = await resp.json();
     console.log(data);
   };
 
-  const createSession = async () => {
+  const handleCreateSession = async () => {
     const resp = await fetch(`${serverUrl}/createsession`);
     const data = await resp.json();
     console.log(data);
   };
 
-  const testSession = async () => {
+  const handleTestSession = async () => {
     const resp = await fetch(`${serverUrl}/testsession`);
     const data = await resp.json();
     console.log(data);
   };
 
-  const getPatchNotes = async () => {
+  const handleGetPatchNotes = async () => {
     const resp = await fetch(`${serverUrl}/patchnotes`);
-    const data = await resp.json(resp);
+    const data = await resp.json();
     console.log(data);
   };
 
-  const getItems = async () => {
+  const handleGetUsedData = async () => {
+    const resp = await fetch(`${serverUrl}/getuseddata`);
+    const data = await resp.json();
+    console.log(data);
+  };
+
+  const handleGetGods = async () => {
+    const resp = await fetch(`${serverUrl}/getgods`);
+    const data = await resp.json();
+    console.log(data);
+  };
+
+  const handleGetItems = async () => {
     const resp = await fetch(`${serverUrl}/getitems`);
     const data = await resp.json();
     console.log(data);
   };
 
-  const handlePing = () => {
-    pingServer();
+  const handleGetPlayer = async () => {
+    const resp = await fetch(`${serverUrl}/getplayer`);
+    const data = await resp.json();
+    console.log(data);
   };
 
-  const handleSmitePing = () => {
-    pingSmiteServer();
-  };
-
-  const handleCreateSession = () => {
-    createSession();
-  };
-
-  const handleTestSession = () => {
-    testSession();
-  };
-
-  const handleListItems = () => {
-    getItems();
-  };
-
-  const handleGetPatchNotes = () => {
-    getPatchNotes();
+  const handleSearch = (e) => {
+    setPlayerSearch(e.target.value.toLowerCase());
   };
 
   return (
-    <div>
-      <button onClick={() => handlePing()}>Ping server</button>
-      <button onClick={() => handleSmitePing()}>Ping Smite API</button>
-      <button onClick={() => handleCreateSession()}>Create Session</button>
-      <button onClick={() => handleTestSession()}>Test Session</button>
-      <button onClick={() => handleListItems()}>List Items</button>
-      <button onClick={() => handleGetPatchNotes()}>Get Patch Notes</button>
+    <div className={styles.dev}>
+      <div className={styles.devButtons}>
+        <button onClick={() => handlePing()}>Ping server</button>
+        <button onClick={() => handleSmitePing()}>Ping Smite API</button>
+        <button onClick={() => handleCreateSession()}>Create Session</button>
+        <button onClick={() => handleTestSession()}>Test Session</button>
+        <button onClick={() => handleGetPatchNotes()}>Get Patch Notes</button>
+        <button onClick={() => handleGetUsedData()}>Get Data Used</button>
+        <button onClick={() => handleGetGods()}>Get Gods</button>
+        <button onClick={() => handleGetItems()}>Get Items</button>
+      </div>
+      <form onSubmit={(e) => handleGetPlayer(e)}>
+        <input
+          type="search"
+          placeholder="Search for player"
+          onChange={(e) => handleSearch(e)}
+        />
+        <button type="submit">Search</button>
+      </form>
     </div>
   );
 };

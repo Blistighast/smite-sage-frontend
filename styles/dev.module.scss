@@ -1,0 +1,15 @@
+.dev {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 6rem;
+}
+
+.devButtons {
+  margin: 1em;
+}
+
+.devButtons button {
+  margin: 2px;
+  padding: 2px;
+}

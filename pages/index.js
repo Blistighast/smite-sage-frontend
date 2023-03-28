@@ -70,6 +70,12 @@ export default function Home() {
     getPatchNotes();
   };
 
+  const handleGetPlayer = async () => {
+    const resp = await fetch(`${serverUrl}/getplayer`);
+    const data = await resp.json();
+    console.log(data);
+  };
+
   return (
     <>
       <Head>
@@ -86,6 +92,7 @@ export default function Home() {
           <button onClick={() => handleTestSession()}>Test Session</button>
           <button onClick={() => handleGetGods()}>Get Gods</button>
           <button onClick={() => handleGetPatchNotes()}>Get Patch Notes</button>
+          <button onClick={() => handleGetPlayer()}>Get Player</button>
           <div>
             {gods
               ? gods.map((god) => <div key={god.id}>{god.Name}</div>)
