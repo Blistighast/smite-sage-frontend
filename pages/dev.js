@@ -56,8 +56,11 @@ const DevPage = () => {
     console.log(data);
   };
 
-  const handleGetPlayer = async () => {
-    const resp = await fetch(`${serverUrl}/getplayer`);
+  const handleGetPlayer = async (e) => {
+    e.preventDefault();
+    const resp = await fetch(
+      `${serverUrl}/getplayer/${playerSearch.toLowerCase()}`
+    );
     const data = await resp.json();
     console.log(data);
   };
