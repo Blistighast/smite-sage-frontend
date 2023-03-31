@@ -1,23 +1,32 @@
+import { useState } from "react";
 import { useRouter } from "next/router";
 
-import styles from "@/styles/cards-container.module.scss";
+import styles from "@/styles/search.module.scss";
 
 interface searchProps {}
 
 const Search: React.FC<searchProps> = () => {
+  const [searchInput, setSearchInput] = useState("");
+
   const router = useRouter();
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {};
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value);
+  };
 
-  const goToSearchedPage = (e: React.FormEvent<HTMLFormElement>) => {
+  const goToSearchedPage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push;
+    router.push(`/player/${searchInput}`);
   };
 
   return (
     <div className={styles.search}>
       <form onSubmit={(e) => goToSearchedPage(e)}>
-        <input type="search" placeholder="" onChange={(e) => handleSearch(e)} />
+        <input
+          type="search"
+          placeholder="Search for a Player"
+          onChange={(e) => handleSearch(e)}
+        />
         <button type="submit">Search</button>
       </form>
     </div>

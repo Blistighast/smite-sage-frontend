@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 
-import Player from "./../../components/Player";
+import Player from "../../components/Player";
 
 export default function PlayerPage() {
   const router = useRouter();
 
-  return <Player Name={router.query.Name} />;
+  return <Player name={router.query.name} />;
 }
 
 export async function getServerSideProps() {
