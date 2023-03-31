@@ -8,11 +8,12 @@ const serverUrl = "http://localhost:4000";
 
 const Gods = () => {
   const [gods, setGods] = useState();
-  const [filteredGods, setFilteredGods] = useState(gods);
+  const [filteredGods, setFilteredGods] = useState();
 
   const getGods = async () => {
     const resp = await fetch(`${serverUrl}/getgods`);
     const data = await resp.json();
+    console.log(data);
     setGods(data);
     setFilteredGods(data);
   };

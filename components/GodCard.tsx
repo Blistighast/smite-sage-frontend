@@ -21,17 +21,19 @@ const GodCard: React.FC<GodProps> = ({ god }) => {
       className={`${styles.card} ${styles.godCard}`}
     >
       <h3>{god.Name}</h3>
-      <Image
-        className={styles.godCardPic}
-        // big picture
-        // src={god.godCard_URL}
-        // small picture
-        src={god.godIcon_URL}
-        alt={`picture of ${god.Name}`}
-        // fill
-        width={160}
-        height={160}
-      />
+      {god.godIcon_URL && (
+        <Image
+          className={styles.godCardPic}
+          // big picture
+          // src={god.godCard_URL}
+          // small picture
+          src={god.godIcon_URL}
+          alt={`picture of ${god.Name}`}
+          // fill
+          width={160}
+          height={160}
+        />
+      )}
       <LowerFrameSvg width={180} height={100} color={"#031329"} />
       <span className={styles.lowerFrame}>
         <div className="roles">
