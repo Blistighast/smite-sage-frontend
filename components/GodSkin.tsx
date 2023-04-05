@@ -24,7 +24,7 @@ const GodSkin: React.FC<SkinProps> = ({ skin }) => {
         src={skin.godSkin_URL}
         alt={skin.skin_name}
         width={250}
-        height={250}
+        height={300}
       />
       <span>
         <p>Favor: {skin.price_favor}</p>
