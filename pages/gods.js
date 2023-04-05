@@ -13,7 +13,6 @@ const Gods = () => {
   const getGods = async () => {
     const resp = await fetch(`${serverUrl}/getgods`);
     const data = await resp.json();
-    console.log(data);
     setGods(data);
     setFilteredGods(data);
   };
