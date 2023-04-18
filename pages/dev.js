@@ -3,10 +3,16 @@ import { useState } from "react";
 
 import styles from "@/styles/dev.module.scss";
 
-const serverUrl = "http://localhost:4000";
+const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
 const DevPage = () => {
   const [playerSearch, setPlayerSearch] = useState();
+
+  const handleManualUpdate = async () => {
+    const resp = await fetch(`${serverUrl}/devmanualupdate`);
+    const data = await resp.json();
+    console.log(data);
+  };
 
   const handlePing = async () => {
     const resp = await fetch(`${serverUrl}/api`);
@@ -71,6 +77,7 @@ const DevPage = () => {
 
   return (
     <div className={styles.dev}>
+      <button onClick={() => handleManualUpdate()}>Update Server</button>
       <div className={styles.devButtons}>
         <button onClick={() => handlePing()}>Ping server</button>
         <button onClick={() => handleSmitePing()}>Ping Smite API</button>

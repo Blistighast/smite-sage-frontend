@@ -34,7 +34,7 @@ type PlayerData = {
   };
 };
 
-const serverUrl = process.env.serverUrl;
+const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
 export default function PlayerPage(player: PlayerData["player"]) {
   return <Player player={player} />;

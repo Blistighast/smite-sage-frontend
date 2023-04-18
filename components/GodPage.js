@@ -75,7 +75,7 @@ export default function GodPage({ id }) {
                 <Image
                   src={god.godIcon_URL}
                   alt={`picture of ${god.Name}`}
-                  width={150}
+                  width={180}
                   height={210}
                 />
                 <h4>{god.Type}</h4>
