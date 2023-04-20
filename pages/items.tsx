@@ -3,7 +3,7 @@ import ItemCard from "./../components/ItemCard";
 
 import styles from "@/styles/cards-container.module.scss";
 
-const serverUrl = "http://localhost:4000";
+const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
 interface Item {
   ItemId: number;

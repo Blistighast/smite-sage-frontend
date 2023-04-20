@@ -1,6 +1,7 @@
 import { GetServerSideProps } from "next";
 
 import Player from "../../components/Player";
+import { useEffect } from "react";
 
 type PlayerData = {
   player: {
@@ -31,21 +32,21 @@ type PlayerData = {
     Tier_Conquest: number;
     Tier_Duel: number;
     Tier_Joust: number;
-  };
+  } | null;
 };
 
 const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
-export default function PlayerPage(player: PlayerData["player"]) {
-  return <Player player={player} />;
+export default function PlayerPage(playerData: PlayerData) {
+  return <Player player={playerData.player} />;
 }
 
 export const getServerSideProps: GetServerSideProps<{
   player: PlayerData;
 }> = async ({ query }) => {
   const playerResp = await fetch(`${serverUrl}/getplayer/${query.name}`);
-  const playerData = await playerResp.json();
+  const playerData: PlayerData = await playerResp.json();
   return {
-    props: playerData[0],
+    props: { player: playerData },
   };
 };

@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import styles from "@/styles/Home.module.scss";
 
-const serverUrl = "http://localhost:4000";
+const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
 export default function Home() {
   const [gods, setGods] = useState([]);

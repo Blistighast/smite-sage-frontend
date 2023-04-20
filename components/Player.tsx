@@ -29,7 +29,7 @@ interface PlayerProps {
     Tier_Conquest: number;
     Tier_Duel: number;
     Tier_Joust: number;
-  };
+  } | null;
 }
 
 const Player: React.FC<PlayerProps> = ({ player }) => {
@@ -66,7 +66,7 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
           </div>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p>Sorry, that player name could not be found.</p>
       )}
     </>
   );

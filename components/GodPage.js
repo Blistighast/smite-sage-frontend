@@ -6,13 +6,15 @@ import styles from "@/styles/godPage.module.scss";
 import Link from "next/link";
 import GodSkin from "./GodSkin";
 
+const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
+
 export default function GodPage({ id }) {
   const skinSortOrder = ["Normal", "Exclusive", "Limited"];
   const [god, setGod] = useState();
   const [godAbilities, setGodAbilities] = useState([]);
 
   const fetchGod = async () => {
-    const resp = await fetch(`http://localhost:4000/gods/${id}`);
+    const resp = await fetch(`${serverUrl}/gods/${id}`);
     const data = await resp.json();
     setGod(...data);
     setGodAbilities([

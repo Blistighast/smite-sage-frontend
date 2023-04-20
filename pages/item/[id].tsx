@@ -8,7 +8,7 @@ export default function SingleItemPage() {
   return <ItemPage id={router.query.id} />;
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   return {
     props: {},
   };

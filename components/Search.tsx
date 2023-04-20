@@ -17,6 +17,7 @@ const Search: React.FC<searchProps> = () => {
   const goToSearchedPage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push(`/player/${searchInput}`);
+    setSearchInput("");
   };
 
   return (
@@ -26,6 +27,7 @@ const Search: React.FC<searchProps> = () => {
           type="search"
           placeholder="Search for a Player"
           onChange={(e) => handleSearch(e)}
+          value={searchInput}
         />
         <button type="submit">Search</button>
       </form>
