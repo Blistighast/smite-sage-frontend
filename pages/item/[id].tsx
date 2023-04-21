@@ -8,8 +8,8 @@ export default function SingleItemPage() {
   return <ItemPage id={router.query.id} />;
 }
 
-export async function getStaticProps() {
-  return {
-    props: {},
-  };
-}
+// export async function getStaticProps() {
+//   return {
+//     props: {},
+//   };
+// }

@@ -38,15 +38,14 @@ const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 const ItemPage: React.FC<ItemProps> = ({ id }) => {
   const [item, setItem] = useState<Item>();
 
-  const fetchItem = async () => {
-    const resp = await fetch(`${serverUrl}/items/${id}`);
-    const data = await resp.json();
-    setItem(data[0]);
-  };
-
   useEffect(() => {
+    const fetchItem = async () => {
+      const resp = await fetch(`${serverUrl}/items/${id}`);
+      const data = await resp.json();
+      setItem(data[0]);
+    };
     fetchItem();
-  }, []);
+  }, [id]);
 
   return (
     <>

@@ -13,47 +13,51 @@ export default function GodPage({ id }) {
   const [god, setGod] = useState();
   const [godAbilities, setGodAbilities] = useState([]);
 
-  const fetchGod = async () => {
-    const resp = await fetch(`${serverUrl}/gods/${id}`);
-    const data = await resp.json();
-    setGod(...data);
-    setGodAbilities([
-      {
-        id: data[0].AbilityId1,
-        abilityName: data[0].Ability1,
-        iconUrl: data[0].godAbility1_URL,
-        description: data[0].Ability_1.Description.itemDescription.description,
-      },
-      {
-        id: data[0].AbilityId2,
-        abilityName: data[0].Ability2,
-        iconUrl: data[0].godAbility2_URL,
-        description: data[0].Ability_2.Description.itemDescription.description,
-      },
-      {
-        id: data[0].AbilityId3,
-        abilityName: data[0].Ability3,
-        iconUrl: data[0].godAbility3_URL,
-        description: data[0].Ability_3.Description.itemDescription.description,
-      },
-      {
-        id: data[0].AbilityId4,
-        abilityName: data[0].Ability4,
-        iconUrl: data[0].godAbility4_URL,
-        description: data[0].Ability_4.Description.itemDescription.description,
-      },
-      {
-        id: data[0].AbilityId5,
-        abilityName: data[0].Ability5,
-        iconUrl: data[0].godAbility5_URL,
-        description: data[0].Ability_5.Description.itemDescription.description,
-      },
-    ]);
-  };
-
   useEffect(() => {
+    const fetchGod = async () => {
+      const resp = await fetch(`${serverUrl}/gods/${id}`);
+      const data = await resp.json();
+      setGod(...data);
+      setGodAbilities([
+        {
+          id: data[0].AbilityId1,
+          abilityName: data[0].Ability1,
+          iconUrl: data[0].godAbility1_URL,
+          description:
+            data[0].Ability_1.Description.itemDescription.description,
+        },
+        {
+          id: data[0].AbilityId2,
+          abilityName: data[0].Ability2,
+          iconUrl: data[0].godAbility2_URL,
+          description:
+            data[0].Ability_2.Description.itemDescription.description,
+        },
+        {
+          id: data[0].AbilityId3,
+          abilityName: data[0].Ability3,
+          iconUrl: data[0].godAbility3_URL,
+          description:
+            data[0].Ability_3.Description.itemDescription.description,
+        },
+        {
+          id: data[0].AbilityId4,
+          abilityName: data[0].Ability4,
+          iconUrl: data[0].godAbility4_URL,
+          description:
+            data[0].Ability_4.Description.itemDescription.description,
+        },
+        {
+          id: data[0].AbilityId5,
+          abilityName: data[0].Ability5,
+          iconUrl: data[0].godAbility5_URL,
+          description:
+            data[0].Ability_5.Description.itemDescription.description,
+        },
+      ]);
+    };
     fetchGod();
-  }, []);
+  }, [id]);
 
   return (
     <div>
