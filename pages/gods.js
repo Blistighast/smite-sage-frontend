@@ -1,50 +1,36 @@
-import { useEffect, useState } from "react";
-import GodCard from "./../components/GodCard";
-import GodsFilter from "./../components/GodsFilter";
+import { useEffect } from "react";
 
-import styles from "@/styles/cards-container.module.scss";
+import Gods from "../components/Gods";
+
+// interface GodProps {
+//   gods: [
+//     god: {
+//       Name: string;
+//       Pantheon: string;
+//       Roles: string;
+//       godCard_URL: string;
+//       godIcon_URL: string;
+//       id: number;
+//       _id: number;
+//     }
+//   ];
+// }
 
 const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
-const Gods = () => {
-  const [gods, setGods] = useState();
-  const [filteredGods, setFilteredGods] = useState();
-
-  const getGods = async () => {
-    const resp = await fetch(`${serverUrl}/getgods`);
-    const data = await resp.json();
-    setGods(data);
-    setFilteredGods(data);
-  };
-
-  useEffect(() => {
-    getGods();
-  }, []);
-
-  return (
-    <div>
-      <GodsFilter
-        gods={gods}
-        filteredGods={filteredGods}
-        setFilteredGods={setFilteredGods}
-      />
-      <div className={`${styles.cardsContainer}`}>
-        {filteredGods ? (
-          filteredGods
-            .sort((a, b) => a.Name.localeCompare(b.Name))
-            .map((god) => <GodCard key={god._id} god={god} />)
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
-    </div>
-  );
+const GodsPage = ({ godsData }) => {
+  return <Gods gods={godsData} />;
 };
 
 export async function getStaticProps() {
+  const resp = await fetch(`${serverUrl}/getgods`, {
+    next: { revalidate: 60 * 60 * 24 },
+  });
+  const godsData = await resp.json();
   return {
-    props: {},
+    props: { godsData },
+    // revalidate: 60 * 60 * 24, //in seconds
   };
 }
 
-export default Gods;
+export default GodsPage;

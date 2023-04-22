@@ -37,8 +37,8 @@ type PlayerData = {
 
 const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
-export default function PlayerPage(playerData: PlayerData) {
-  return <Player player={playerData.player} />;
+export default function PlayerPage({ player }: PlayerData) {
+  return <Player player={player} />;
 }
 
 export const getServerSideProps: GetServerSideProps<{
