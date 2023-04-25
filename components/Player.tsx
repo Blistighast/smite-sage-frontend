@@ -66,7 +66,10 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
           </div>
         </div>
       ) : (
-        <p>Sorry, that player name could not be found.</p>
+        <p>
+          Sorry, that player name could not be found or the Smite server might
+          be down.
+        </p>
       )}
     </>
   );

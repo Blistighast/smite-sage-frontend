@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/indexOld.tsx",
-    "pages/god/[id].tsx",
+    "pages/god/[name].tsx",
     "components/GodPage.js",
     "components/LowerFrameSvg.js"
   ],

@@ -17,7 +17,7 @@ interface GodProps {
 const GodCard: React.FC<GodProps> = ({ god }) => {
   return (
     <Link
-      href={`/god/${god.id}`}
+      href={`/god/${god.Name}`}
       className={`${styles.card} ${styles.godCard}`}
     >
       <h3>{god.Name}</h3>

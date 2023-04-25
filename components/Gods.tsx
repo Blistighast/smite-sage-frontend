@@ -5,7 +5,7 @@ import GodsFilter from "./GodsFilter";
 
 import styles from "@/styles/cards-container.module.scss";
 
-interface GodProps {
+interface GodsProps {
   gods: [
     god: {
       Name: string;
@@ -19,7 +19,7 @@ interface GodProps {
   ];
 }
 
-const Gods: React.FC<GodProps> = ({ gods }) => {
+const Gods: React.FC<GodsProps> = ({ gods }) => {
   const [filteredGods, setFilteredGods] = useState(gods);
 
   return (
@@ -35,7 +35,7 @@ const Gods: React.FC<GodProps> = ({ gods }) => {
             .sort((a, b) => a.Name.localeCompare(b.Name))
             .map((god) => <GodCard key={god._id} god={god} />)
         ) : (
-          <p>Loading...</p>
+          <p>Sorry, the server seems to be down</p>
         )}
       </div>
     </div>

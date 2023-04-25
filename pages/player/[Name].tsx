@@ -3,7 +3,7 @@ import { GetServerSideProps } from "next";
 import Player from "../../components/Player";
 import { useEffect } from "react";
 
-type PlayerData = {
+interface PlayerData {
   player: {
     Name: string;
     Platform: string;
@@ -33,7 +33,7 @@ type PlayerData = {
     Tier_Duel: number;
     Tier_Joust: number;
   } | null;
-};
+}
 
 const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
