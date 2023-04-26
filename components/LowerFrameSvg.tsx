@@ -1,6 +1,12 @@
 // need to convert regular svg into jsx
 
-const LowerFrameSvg = ({ width, height, color }) => {
+interface FrameSVGProps {
+  width: number;
+  height: number;
+  color: string;
+}
+
+const LowerFrameSvg = ({ width, height, color }: FrameSVGProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -9,7 +9,6 @@ export default function Home() {
   const [gods, setGods] = useState([]);
 
   const pingServer = async () => {
-    // const resp = await fetch("http://localhost:4000/api");
     const resp = await fetch(`${serverUrl}/api`);
     const data = await resp.json();
     console.log(data);

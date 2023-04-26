@@ -5,20 +5,11 @@ import styles from "@/styles/godPage.module.scss";
 import Link from "next/link";
 import GodSkin from "./GodSkin";
 
-const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
-
-// change god to id to go back to old method, delete this once new method working
-export default function GodPage({ god }) {
+export default function GodPage({ god }: GodData) {
   const skinSortOrder = ["Normal", "Exclusive", "Limited"];
-  // const [god, setGod] = useState();
-  const [godAbilities, setGodAbilities] = useState([]);
+  const [godAbilities, setGodAbilities] = useState<GodAbility[]>();
 
   useEffect(() => {
-    // console.log(god);
-    // const fetchGod = async () => {
-    //   const resp = await fetch(`${serverUrl}/gods/${name}`);
-    //   const data = await resp.json();
-    //   setGod(...data);
     setGodAbilities([
       {
         id: god.AbilityId1,
@@ -51,8 +42,6 @@ export default function GodPage({ god }) {
         description: god.Ability_5.Description.itemDescription.description,
       },
     ]);
-    // };
-    // fetchGod();
   }, [god]);
 
   return (
@@ -68,9 +57,11 @@ export default function GodPage({ god }) {
                 </p>
                 <h3>Lore</h3>
                 <hr />
-                <p>{god.Lore.replaceAll("\\n\\n", "\n\n")}</p>
+                <p className={styles.lore}>
+                  {god.Lore.replaceAll("\\n\\n", "\n\n")}
+                </p>
               </div>
-              <div>
+              <div className={styles.titleCard}>
                 <h2>{god.Name}</h2>
                 <h3>{god.Title}</h3>
 
@@ -80,43 +71,49 @@ export default function GodPage({ god }) {
                   width={180}
                   height={210}
                 />
-                <h4>{god.Type}</h4>
-                <h4>{god.Pros}</h4>
-                <div>
-                  <span>
-                    {god.Roles}
+                <p>{god.Type}</p>
+                <p>{god.Pros}</p>
+                <div className={styles.godType}>
+                  <div>
                     <Image
                       src={`/class-icons/${god.Roles}.webp`}
                       alt="Role Icon"
                       width={50}
                       height={50}
                     />
-                  </span>
-                  <span>
-                    {god.Pantheon}
+                    {god.Roles}
+                  </div>
+                  <div>
                     <Image
                       src={`/pantheon_icons/${god.Pantheon}.webp`}
                       alt="Pantheon Icon"
                       width={50}
                       height={50}
                     />
-                  </span>
+                    {god.Pantheon}
+                  </div>
                 </div>
               </div>
             </div>
             <div className={styles.abilitiesContainer}>
-              {godAbilities.map(({ id, abilityName, iconUrl, description }) => (
-                <div className={styles.ability} key={id}>
-                  <h4>{abilityName}</h4>
-                  <Image
-                    src={iconUrl}
-                    alt={`icon for ${iconUrl}`}
-                    width={70}
-                    height={70}
-                  />
-                  <p>{description}</p>
-                </div>
-              ))}
+              {godAbilities?.map(
+                ({ id, abilityName, iconUrl, description }) => (
+                  <div className={styles.ability} key={id}>
+                    <h4>{abilityName}</h4>
+                    <Image
+                      src={iconUrl}
+                      alt={`icon for ${iconUrl}`}
+                      width={70}
+                      height={70}
+                    />
+                    <p>
+                      {description
+                        .replace("<n>", "\n\n")
+                        .replaceAll(/<.*?>/g, "")}
+                    </p>
+                  </div>
+                )
+              )}
             </div>
             <div className={styles.skinContainer}>
               {god.skins
@@ -137,4 +134,87 @@ export default function GodPage({ god }) {
       </div>
     </div>
   );
+}
+
+interface GodData {
+  god: {
+    id: number;
+    Name: string;
+    Title: string;
+    Lore: string;
+    godIcon_URL: string;
+    Type: string;
+    Pantheon: string;
+    Roles: string;
+    Pros: string;
+    AbilityId1: number;
+    Ability1: string;
+    godAbility1_URL: string;
+    AbilityId2: number;
+    Ability2: string;
+    godAbility2_URL: string;
+    AbilityId3: number;
+    Ability3: string;
+    godAbility3_URL: string;
+    AbilityId4: number;
+    Ability4: string;
+    godAbility4_URL: string;
+    AbilityId5: number;
+    Ability5: string;
+    godAbility5_URL: string;
+    skins: [
+      {
+        skin_id1: number;
+        skin_name: string;
+        god_name: string;
+        godSkin_URL: string;
+        godIcon_URL: string;
+        obtainability: string;
+        price_favor: number;
+        price_gems: number;
+      }
+    ];
+    Ability_1: {
+      Description: {
+        itemDescription: {
+          description: string;
+        };
+      };
+    };
+    Ability_2: {
+      Description: {
+        itemDescription: {
+          description: string;
+        };
+      };
+    };
+    Ability_3: {
+      Description: {
+        itemDescription: {
+          description: string;
+        };
+      };
+    };
+    Ability_4: {
+      Description: {
+        itemDescription: {
+          description: string;
+        };
+      };
+    };
+    Ability_5: {
+      Description: {
+        itemDescription: {
+          description: string;
+        };
+      };
+    };
+  };
+}
+
+interface GodAbility {
+  id: number | null;
+  abilityName: string;
+  iconUrl: string;
+  description: string;
 }
