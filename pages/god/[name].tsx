@@ -9,15 +9,13 @@ export default function SingleGodPage({ god }: GodData) {
 }
 
 export async function getStaticPaths() {
-  const resp = await fetch(`${serverUrl}/getgods`, {
-    // next: { revalidate: 60 * 60 * 24 },
-  });
+  const resp = await fetch(`${serverUrl}/getgods`);
   const godsData = await resp.json();
 
   const paths = godsData.map((god: GodData["god"]) => ({
     params: { name: god.Name },
   }));
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 }
 
 export const getStaticProps: GetStaticProps<{ god: GodData }> = async ({
@@ -27,6 +25,7 @@ export const getStaticProps: GetStaticProps<{ god: GodData }> = async ({
   const godData = await resp.json();
   return {
     props: { god: godData[0] },
+    revalidate: 60 * 60 * 24,
   };
 };
 

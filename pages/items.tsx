@@ -22,12 +22,11 @@ const ItemsPage: React.FC<ItemsProps> = ({ items }) => {
 };
 
 export async function getStaticProps() {
-  const resp = await fetch(`${serverUrl}/getitems`, {
-    next: { revalidate: 60 * 60 * 24 },
-  });
+  const resp = await fetch(`${serverUrl}/getitems`);
   const itemsData = await resp.json();
   return {
     props: { items: itemsData },
+    revalidate: 60 * 60 * 24,
   };
 }
 

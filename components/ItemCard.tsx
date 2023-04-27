@@ -17,7 +17,7 @@ interface ItemProps {
 const ItemCard: React.FC<ItemProps> = ({ item }) => {
   return (
     <Link
-      href={`/item/${item.ItemId}`}
+      href={`/item/${item.DeviceName}`}
       className={`${styles.card} ${styles.itemCard}`}
     >
       <Image

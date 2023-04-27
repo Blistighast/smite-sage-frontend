@@ -1,52 +1,34 @@
-import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import styles from "@/styles/itemPage.module.scss";
 import Link from "next/link";
 import ItemCardBottom from "./ItemCardBottom";
 
-interface ItemProps {
-  id: string | string[] | undefined;
-}
-
 interface MenuItem {
   Description: string;
   Value: string;
 }
 
-interface Item {
-  ItemId: number;
-  DeviceName: string;
-  itemIcon_URL: string;
-  Price: number;
-  ShortDesc: string;
-  Type: string;
-  ItemTier: number;
-  StartingItem: boolean;
-  Glyph: string;
-  ItemDescription: {
-    Description: string;
-    SecondaryDescription: string;
-    Menuitems: MenuItem[];
+interface ItemData {
+  item: {
+    ItemId: number;
+    DeviceName: string;
+    itemIcon_URL: string;
+    Price: number;
+    ShortDesc: string;
+    Type: string;
+    ItemTier: number;
+    StartingItem: boolean;
+    Glyph: string;
+    ItemDescription: {
+      Description: string;
+      SecondaryDescription: string;
+      Menuitems: MenuItem[];
+    };
   };
-
-  prevState: [];
 }
 
-const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
-
-const ItemPage: React.FC<ItemProps> = ({ id }) => {
-  const [item, setItem] = useState<Item>();
-
-  useEffect(() => {
-    const fetchItem = async () => {
-      const resp = await fetch(`${serverUrl}/items/${id}`);
-      const data = await resp.json();
-      setItem(data[0]);
-    };
-    fetchItem();
-  }, [id]);
-
+const ItemPage = ({ item }: ItemData) => {
   return (
     <>
       {item ? (
