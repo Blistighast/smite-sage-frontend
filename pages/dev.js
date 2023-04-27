@@ -62,6 +62,12 @@ const DevPage = () => {
     console.log(data);
   };
 
+  const handleGodCount = async () => {
+    const resp = await fetch(`${serverUrl}/devcountgods`);
+    const countData = await resp.json();
+    console.log(countData);
+  };
+
   const handleGetPlayer = async (e) => {
     e.preventDefault();
     const resp = await fetch(
@@ -87,6 +93,7 @@ const DevPage = () => {
         <button onClick={() => handleGetUsedData()}>Get Data Used</button>
         <button onClick={() => handleGetGods()}>Get Gods</button>
         <button onClick={() => handleGetItems()}>Get Items</button>
+        <button onClick={() => handleGodCount()}>Count Gods</button>
       </div>
       <form onSubmit={(e) => handleGetPlayer(e)}>
         <input
