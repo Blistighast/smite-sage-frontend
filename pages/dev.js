@@ -68,6 +68,12 @@ const DevPage = () => {
     console.log(countData);
   };
 
+  const handleWebScraper = async () => {
+    const res = await fetch(`${serverUrl}/checkscraper`);
+    const scrapeData = res.json();
+    console.log(scrapeData);
+  };
+
   const handleGetPlayer = async (e) => {
     e.preventDefault();
     const resp = await fetch(
@@ -94,6 +100,7 @@ const DevPage = () => {
         <button onClick={() => handleGetGods()}>Get Gods</button>
         <button onClick={() => handleGetItems()}>Get Items</button>
         <button onClick={() => handleGodCount()}>Count Gods</button>
+        <button onClick={() => handleWebScraper()}>Check Smite Scraper</button>
       </div>
       <form onSubmit={(e) => handleGetPlayer(e)}>
         <input
