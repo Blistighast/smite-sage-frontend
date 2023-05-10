@@ -1,0 +1,92 @@
+.homeContainer {
+  color: var(--font-secondary);
+  text-decoration: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "major major "
+    "minor godInfo"
+    "seasonInfo  seasonInfo";
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 1em;
+  position: relative;
+  // width: 80%;
+  // height: 100%;
+}
+
+.articleMajor {
+  grid-area: major;
+}
+
+.articleMinor {
+  grid-area: minor;
+}
+
+.articleGodInfo {
+  grid-area: godInfo;
+}
+
+.articleSeasonInfo {
+  grid-area: seasonInfo;
+}
+
+.article {
+  color: var(--font-secondary);
+  position: relative;
+  text-decoration: none;
+  border-width: 3px;
+  border-style: solid;
+  border-image-source: var(--gold-gradient);
+  border-image-slice: 40;
+  box-shadow: var(--box-shadow);
+  background-size: cover;
+  background-position: center;
+  padding-right: 6rem;
+  // padding: 10rem 20rem 10rem 20rem;
+  height: 210px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.articleInfo {
+  // position: absolute;
+  // bottom: 0px;
+  // left: 0px;
+  background-color: rgb(27, 27, 27, 0.7);
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-top-right-radius: 6px;
+}
+
+.articleTypeTitle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: rgb(27, 27, 27, 0.7);
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom-left-radius: 6px;
+}
+
+.latestGod {
+  grid-area: latestGod;
+}
+
+.latestGod h2 {
+  text-align: center;
+}

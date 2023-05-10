@@ -1,80 +1,12 @@
 import Head from "next/head";
-import { useState } from "react";
 
-import styles from "@/styles/Home.module.scss";
+import styles from "@/styles/homepage.module.scss";
+import Articles from "./../components/Articles";
+import GodCard from "./../components/GodCard";
 
 const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
-export default function Home() {
-  const [gods, setGods] = useState([]);
-
-  const pingServer = async () => {
-    const resp = await fetch(`${serverUrl}/api`);
-    const data = await resp.json();
-    console.log(data);
-  };
-
-  const pingSmiteServer = async () => {
-    const resp = await fetch(`${serverUrl}/smiteapi`);
-    const data = await resp.json();
-    console.log(data);
-  };
-
-  const createSession = async () => {
-    const resp = await fetch(`${serverUrl}/createsession`);
-    const data = await resp.json();
-    console.log(data);
-  };
-
-  const testSession = async () => {
-    const resp = await fetch(`${serverUrl}/testsession`);
-    const data = await resp.json();
-    console.log(data);
-  };
-
-  const getGods = async () => {
-    const resp = await fetch(`${serverUrl}/getgods`);
-    const data = await resp.json();
-    console.log(data);
-    setGods(data);
-  };
-
-  const getPatchNotes = async () => {
-    const resp = await fetch(`${serverUrl}/patchnotes`);
-    const data = await resp.json(resp);
-    console.log(data);
-  };
-
-  const handlePing = () => {
-    pingServer();
-  };
-
-  const handleSmitePing = () => {
-    pingSmiteServer();
-  };
-
-  const handleCreateSession = () => {
-    createSession();
-  };
-
-  const handleTestSession = () => {
-    testSession();
-  };
-
-  const handleGetGods = () => {
-    getGods();
-  };
-
-  const handleGetPatchNotes = () => {
-    getPatchNotes();
-  };
-
-  const handleGetPlayer = async () => {
-    const resp = await fetch(`${serverUrl}/getplayer`);
-    const data = await resp.json();
-    console.log(data);
-  };
-
+export default function Home({ articles, latestGod }) {
   return (
     <>
       <Head>
@@ -83,22 +15,40 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.main}>
-        <div>
-          <button onClick={() => handlePing()}>Ping server</button>
-          <button onClick={() => handleSmitePing()}>Ping Smite API</button>
-          <button onClick={() => handleCreateSession()}>Create Session</button>
-          <button onClick={() => handleTestSession()}>Test Session</button>
-          <button onClick={() => handleGetGods()}>Get Gods</button>
-          <button onClick={() => handleGetPatchNotes()}>Get Patch Notes</button>
-          <button onClick={() => handleGetPlayer()}>Get Player</button>
-          <div>
-            {gods
-              ? gods.map((god) => <div key={god.id}>{god.Name}</div>)
-              : null}
-          </div>
+      <div className={styles.homeContainer}>
+        <Articles articles={articles} />
+        <div className={styles.latestGod}>
+          <h2>Latest God</h2>
+          <GodCard god={latestGod} />
         </div>
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const majorPatchresp = await fetch(`${serverUrl}/article/majorPatchInfo`);
+  const majorPatchData = await majorPatchresp.json();
+  const minorPatchResp = await fetch(`${serverUrl}/article/minorPatchInfo`);
+  const minorPatchData = await minorPatchResp.json();
+  const godInfoResp = await fetch(`${serverUrl}/article/godInfo`);
+  const godInfoData = await godInfoResp.json();
+  const seasonInfoResp = await fetch(`${serverUrl}/article/seasonInfo`);
+  const seasonInfoData = await seasonInfoResp.json();
+
+  const latestGodResp = await fetch(`${serverUrl}/latestGod`);
+  const latestGodData = await latestGodResp.json();
+
+  return {
+    props: {
+      articles: [
+        majorPatchData[0],
+        minorPatchData[0],
+        godInfoData[0],
+        seasonInfoData[0],
+      ],
+      latestGod: latestGodData[0],
+    },
+    revalidate: 60 * 60 * 24,
+  };
 }

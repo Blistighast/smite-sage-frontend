@@ -1,4 +1,26 @@
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search form {
+  font-size: 1em;
+  padding: 0.5em;
+  border-radius: 3px;
+}
+
+.searchInput,
+.searchButton {
+  font-size: inherit;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
 .search form input {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-right: 5px;
   background-color: black;
   color: white;
 }

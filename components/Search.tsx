@@ -28,8 +28,11 @@ const Search: React.FC<searchProps> = () => {
           placeholder="Search for a Player"
           onChange={(e) => handleSearch(e)}
           value={searchInput}
+          className={styles.searchInput}
         />
-        <button type="submit">Search</button>
+        <button type="submit" className={styles.searchButton}>
+          Search
+        </button>
       </form>
     </div>
   );

@@ -10,6 +10,7 @@
   padding: 1.5em;
   height: 7em;
   color: var(--font-secondary);
+  flex-wrap: wrap;
 }
 
 .logoContainer {
@@ -57,6 +58,7 @@
   display: flex;
   justify-content: center;
   gap: 2em;
+  flex-wrap: wrap;
 }
 
 .footerContainer p {
