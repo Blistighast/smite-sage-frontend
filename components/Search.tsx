@@ -25,7 +25,7 @@ const Search: React.FC<searchProps> = () => {
       <form onSubmit={(e) => goToSearchedPage(e)}>
         <input
           type="search"
-          placeholder="Search for a Player"
+          placeholder="Search for Player"
           onChange={(e) => handleSearch(e)}
           value={searchInput}
           className={styles.searchInput}

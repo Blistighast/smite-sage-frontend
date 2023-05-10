@@ -70,7 +70,7 @@ body {
   margin: auto;
   position: relative;
   font-size: 1.5rem;
-  z-index: -100;
+  /* z-index: -100; */
 }
 button {
   font-family: 'poppins-medium', --apple-system, BlinkMacSystemFont, 
@@ -97,7 +97,7 @@ main {
     #cb9b51 7.8%
     );
     border-image-slice: 100;
-    z-index: -10;
+    /* z-index: -10; */
 }
 
 input::placeholder {

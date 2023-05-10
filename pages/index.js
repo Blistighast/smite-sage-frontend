@@ -19,7 +19,11 @@ export default function Home({ articles, latestGod }) {
         <Articles articles={articles} />
         <div className={styles.latestGod}>
           <h2>Latest God</h2>
-          <GodCard god={latestGod} />
+          <div className={styles.shineContainer}>
+            <span className={styles.shine}></span>
+            <GodCard god={latestGod} />
+            <span className={styles.shine}></span>
+          </div>
         </div>
       </div>
     </>
