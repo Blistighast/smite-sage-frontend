@@ -43,9 +43,11 @@ export default function PlayerPage() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!router.isReady) return;
-    const { name } = router.query;
-    setQueryName(name);
+    if (router.isReady) {
+      const { name } = router.query;
+      console.log("router", router);
+      setQueryName(name);
+    }
   }, [router.isReady, router.query]);
 
   console.log("from page", queryName);
