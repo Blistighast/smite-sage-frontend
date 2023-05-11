@@ -2,7 +2,7 @@ import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 
 import Player from "../../components/Player";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface PlayerData {
   player: {
@@ -39,11 +39,17 @@ interface PlayerData {
 const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
 export default function PlayerPage() {
+  const [queryName, setQueryName] = useState<string | string[] | undefined>("");
   const router = useRouter();
-  const { name } = router.query;
 
-  console.log("from page", name);
-  return <Player name={name} />;
+  useEffect(() => {
+    if (!router.isReady) return;
+    const { name } = router.query;
+    setQueryName(name);
+  }, [router.isReady, router.query]);
+
+  console.log("from page", queryName);
+  return <Player name={queryName} />;
 }
 
 // { player }: PlayerData
