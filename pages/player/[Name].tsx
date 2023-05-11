@@ -42,10 +42,7 @@ export default function PlayerPage() {
   const router = useRouter();
   const { name } = router.query;
 
-  useEffect(() => {
-    console.log("from page", name);
-  }, []);
-
+  console.log("from page", name);
   return <Player name={name} />;
 }
 
