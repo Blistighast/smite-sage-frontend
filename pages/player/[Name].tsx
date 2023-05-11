@@ -44,6 +44,7 @@ export default function PlayerPage({ player }: PlayerData) {
 export const getServerSideProps: GetServerSideProps<{
   player: PlayerData;
 }> = async ({ query }) => {
+  console.log(query);
   const playerResp = await fetch(`${serverUrl}/getplayer/${query.name}`);
   const playerData: PlayerData = await playerResp.json();
   return {

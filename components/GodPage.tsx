@@ -76,7 +76,7 @@ export default function GodPage({ god }: GodData) {
                 <div className={styles.godType}>
                   <div>
                     <Image
-                      src={`/class-icons/${god.Roles}.webp`}
+                      src={`/class_icons/${god.Roles}.webp`}
                       alt="Role Icon"
                       width={50}
                       height={50}

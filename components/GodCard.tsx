@@ -38,7 +38,7 @@ const GodCard: React.FC<GodProps> = ({ god }) => {
       <span className={styles.lowerFrame}>
         <div className="roles">
           <Image
-            src={`/class-icons/${god.Roles}.webp`}
+            src={`/class_icons/${god.Roles}.webp`}
             alt="Role Icon"
             width={43}
             height={43}

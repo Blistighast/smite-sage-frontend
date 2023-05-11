@@ -11,7 +11,7 @@ const Nav: React.FC<NavProps> = () => {
       <Link href="/gods">Gods</Link>
       <Link href="/items">Items</Link>
       {/* remove dev page later */}
-      <Link href="/dev">Dev</Link>
+      {/* <Link href="/dev">Dev</Link> */}
     </div>
   );
 };
