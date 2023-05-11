@@ -16,7 +16,6 @@ const Search: React.FC<searchProps> = () => {
 
   const goToSearchedPage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(searchInput);
     router.push(`/player/${searchInput}`);
     setSearchInput("");
   };
