@@ -44,7 +44,7 @@ const Player: React.FC<queryProps> = ({ name }) => {
   useEffect(() => {
     setLoading(true);
 
-    console.log("from component", name);
+    // console.log("from component", name);
 
     const fetchData = async () => {
       const res = await fetch(`${serverUrl}/getplayer/${name}`);

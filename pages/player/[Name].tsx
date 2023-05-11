@@ -45,14 +45,14 @@ export default function PlayerPage() {
   useEffect(() => {
     if (router.isReady) {
       const { Name } = router.query;
-      console.log("router inside useEffect", router);
+      // console.log("router inside useEffect", router);
       setQueryName(Name);
     }
   }, [router.isReady, router.query]);
 
-  console.log("router outside useEffect", router);
+  // console.log("router outside useEffect", router);
 
-  console.log("from page", queryName);
+  // console.log("from page", queryName);
   return <Player name={queryName} />;
 }
 
