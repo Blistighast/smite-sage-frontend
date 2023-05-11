@@ -1,38 +1,64 @@
 import styles from "@/styles/playerPage.module.scss";
+import { useEffect, useState } from "react";
 
-interface PlayerProps {
-  player: {
-    Name: string;
-    Platform: string;
-    Region: string;
-    Personal_Status_Message: string;
-    TeamId: number;
-    Team_Name: string;
-    Created_Datetime: string;
-    Last_Login_Datetime: string;
-    HoursPlayed: number;
-    MinutesPlayed: number;
-    Level: number;
-    MasteryLevel: number;
-    Wins: number;
-    Losses: number;
-    Leaves: number;
-    Total_Achievements: number;
-    Total_Worshippers: number;
-    Avatar_URL: string;
-    Rank_Stat_Conquest: number;
-    Rank_Stat_Conquest_Controller: number;
-    Rank_Stat_Duel: number;
-    Rank_Stat_Duel_Controller: number;
-    Rank_Stat_Joust: number;
-    Rank_Stat_Joust_Controller: number;
-    Tier_Conquest: number;
-    Tier_Duel: number;
-    Tier_Joust: number;
-  } | null;
+interface Player {
+  Name: string;
+  Platform: string;
+  Region: string;
+  Personal_Status_Message: string;
+  TeamId: number;
+  Team_Name: string;
+  Created_Datetime: string;
+  Last_Login_Datetime: string;
+  HoursPlayed: number;
+  MinutesPlayed: number;
+  Level: number;
+  MasteryLevel: number;
+  Wins: number;
+  Losses: number;
+  Leaves: number;
+  Total_Achievements: number;
+  Total_Worshippers: number;
+  Avatar_URL: string;
+  Rank_Stat_Conquest: number;
+  Rank_Stat_Conquest_Controller: number;
+  Rank_Stat_Duel: number;
+  Rank_Stat_Duel_Controller: number;
+  Rank_Stat_Joust: number;
+  Rank_Stat_Joust_Controller: number;
+  Tier_Conquest: number;
+  Tier_Duel: number;
+  Tier_Joust: number;
 }
 
-const Player: React.FC<PlayerProps> = ({ player }) => {
+interface queryProps {
+  name: string | string[] | undefined;
+}
+
+const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
+
+{
+  /* <PlayerProps></PlayerProps> */
+}
+const Player: React.FC<queryProps> = ({ name }) => {
+  const [player, setPlayer] = useState<Player>();
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+
+    const fetchData = async () => {
+      const res = await fetch(`${serverUrl}/getplayer/${name}`);
+      const playerData = await res.json();
+      setPlayer(playerData);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, [name]);
+
+  if (isLoading) return <p>Loading...</p>;
+
   return (
     <>
       {player ? (

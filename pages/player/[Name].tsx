@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import { useRouter } from "next/router";
 
 import Player from "../../components/Player";
 import { useEffect } from "react";
@@ -37,19 +38,28 @@ interface PlayerData {
 
 const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
-export default function PlayerPage({ player }: PlayerData) {
-  return <Player player={player} />;
+export default function PlayerPage() {
+  const router = useRouter();
+  const { name } = router.query;
+
+  useEffect(() => {
+    console.log("from page", name);
+  }, []);
+
+  return <Player name={name} />;
 }
 
-export const getServerSideProps: GetServerSideProps<{
-  player: PlayerData;
-}> = async (context) => {
-  console.log("inside fetch", context.query);
-  const playerResp = await fetch(
-    `${serverUrl}/getplayer/${context.query.name}`
-  );
-  const playerData: PlayerData = await playerResp.json();
-  return {
-    props: { player: playerData },
-  };
-};
+// { player }: PlayerData
+
+// export const getServerSideProps: GetServerSideProps<{
+//   player: PlayerData;
+// }> = async (context) => {
+//   console.log("inside fetch", context.query);
+//   const playerResp = await fetch(
+//     `${serverUrl}/getplayer/${context.query.name}`
+//   );
+//   const playerData: PlayerData = await playerResp.json();
+//   return {
+//     props: { player: playerData },
+//   };
+// };
