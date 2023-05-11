@@ -42,6 +42,11 @@
   text-decoration: none;
 }
 
+.navContainer a:hover {
+  background-color: rgb(12, 45, 90);
+  border-radius: 6px;
+}
+
 // FOOTER
 .footerContainer {
   position: absolute;
