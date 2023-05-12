@@ -61,6 +61,33 @@
   // overflow: hidden;
 }
 
+// .article:hover {
+//   --angle: 0deg;
+//   border-image-source: conic-gradient(
+//     from var(--angle),
+//     #cb9b51 0,
+//     #f6e27a 20%,
+//     #f6f2c0 40%,
+//     #f6e27a 60%,
+//     #cb9b51 80%
+//   );
+//   border-image-slice: 40;
+
+//   animation: 1s rotate linear infinite;
+// }
+
+// @keyframes rotate {
+//   to {
+//     --angle: 360deg;
+//   }
+// }
+
+// @property --angle {
+//   syntax: "<angle>";
+//   initial-value: 0deg;
+//   inherits: false;
+// }
+
 .shineContainer {
   position: relative;
   isolation: isolate;

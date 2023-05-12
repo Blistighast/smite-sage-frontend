@@ -24,6 +24,10 @@ const GodsFilter: React.FC<any> = ({ gods, filteredGods, setFilteredGods }) => {
     router.push(`/god/${filteredGods[0].id}`);
   };
 
+  // const activeFilter = (path: string) => {
+  //   return  ? styles.active : "";
+  // };
+
   return (
     <div className={styles.search}>
       <form onSubmit={(e) => goToGodPage(e)}>
@@ -35,7 +39,9 @@ const GodsFilter: React.FC<any> = ({ gods, filteredGods, setFilteredGods }) => {
         <button type="submit">Search</button>
       </form>
       <span>
-        <button onClick={() => setFilteredGods(gods)}>All</button>
+        <button className={styles.active} onClick={() => setFilteredGods(gods)}>
+          All
+        </button>
         <button onClick={() => handleFilter("Warrior")}>Warrior</button>
         <button onClick={() => handleFilter("Hunter")}>Hunter</button>
         <button onClick={() => handleFilter("Mage")}>Mage</button>

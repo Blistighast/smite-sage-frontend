@@ -8,13 +8,39 @@
   position: relative;
   background-color: var(--tertiary-color);
   text-transform: uppercase;
-  border-width: 3px;
-  border-style: solid;
+  border: 3px solid;
   max-width: var(--card-width);
   border-image-source: var(--gold-gradient);
   border-image-slice: 40;
   padding: none;
   box-shadow: var(--box-shadow);
+}
+
+.godCard:hover {
+  --angle: 0deg;
+  border-image-source: conic-gradient(
+    from var(--angle),
+    #cb9b51 0,
+    #f6e27a 20%,
+    #f6f2c0 40%,
+    #f6e27a 60%,
+    #cb9b51 80%
+  );
+  border-image-slice: 40;
+
+  animation: 1s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
 .godCard h3 {

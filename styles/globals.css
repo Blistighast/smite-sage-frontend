@@ -29,8 +29,8 @@
   --darkGray: var(--darkGrey)
   --offWhite: #ededed;
 
-  --gold-gradient: linear-gradient(
-    to right,
+  --gold-gradient: conic-gradient(
+    from 30deg,
     #cb9b51 0,
     #f6e27a 20%,
     #f6f2c0 40%,

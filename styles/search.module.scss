@@ -15,6 +15,13 @@
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
+  border-radius: 8px;
+}
+
+.searchButton {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background-color: white;
 }
 
 .search form input {
@@ -23,4 +30,8 @@
   margin-right: 5px;
   background-color: black;
   color: white;
+}
+
+.search input:focus {
+  box-shadow: 0 0 15px gold;
 }
