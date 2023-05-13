@@ -44,6 +44,7 @@ const ArticleCard: React.FC<ArticleProps> = ({ article }) => {
   return (
     <Link
       href={article.articleUrl}
+      target="_blank"
       className={`${styles.article} ${articleTypeClass} ${styles.shineContainer}`}
       style={{
         backgroundImage: `url(${article.imageUrl})`,

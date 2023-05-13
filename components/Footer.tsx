@@ -1,10 +1,19 @@
+import Link from "next/link";
 import styles from "@/styles/runners.module.scss";
 
 const Footer = () => {
   return (
     <footer className={styles.footerContainer}>
       <span>
-        <p className="made-by">Made by Brian Guterl</p>
+        <p className="made-by">
+          Made by&nbsp;
+          <Link
+            href={"https://brianguterl.com/"}
+            className={styles.portfolioLink}
+          >
+            Brian Guterl
+          </Link>
+        </p>
         <p className="hi-rez">SMITE is owned by Hi-Rez</p>
       </span>
       <p>
