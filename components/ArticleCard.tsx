@@ -51,15 +51,6 @@ const ArticleCard: React.FC<ArticleProps> = ({ article }) => {
       }}
     >
       <span className={styles.shine}></span>
-      {/* <Image
-        className={styles.articleCardPic}
-        src={article.imageUrl}
-        alt={"picture of article featured image "}
-        // width={400}
-        // height={200}
-        fill={true}
-        // style={{ objectFit: "contain" }}
-      /> */}
       {articleTypeDisplay}
       <div className={styles.articleInfo}>
         <h3>{article.headline}</h3>
