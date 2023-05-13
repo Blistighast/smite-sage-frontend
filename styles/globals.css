@@ -53,6 +53,11 @@
   
   /* makes font 10px, for easy sizing, but still overridable for accessability  */
   font-size: 62.5%; 
+
+  background: url("/smite-background-ganesha.jpg") black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
 }
 *, *:before,*:after {
   margin: 0;
@@ -66,10 +71,7 @@ body {
   margin: auto;
   position: relative;
   font-size: 1.5rem;
-  background: url("/smite-background-ganesha.jpg") black;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
+
   /* z-index: -100; */
 }
 button {
