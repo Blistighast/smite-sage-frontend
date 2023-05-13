@@ -50,11 +50,7 @@
   --box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.25);
   --card-width: 175px
   box-sizing: border-box;
-  background: url("/smite-background-ganesha.jpg") black;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-
+  
   /* makes font 10px, for easy sizing, but still overridable for accessability  */
   font-size: 62.5%; 
 }
@@ -70,6 +66,10 @@ body {
   margin: auto;
   position: relative;
   font-size: 1.5rem;
+  background: url("/smite-background-ganesha.jpg") black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
   /* z-index: -100; */
 }
 button {
@@ -83,6 +83,9 @@ button:hover {
 
 main {
   min-height: 100vh;
+  max-width: var(--max-width);
+  /* width: 50%; */
+  margin: auto;
   padding-top: 7em;
   padding-bottom: 7em;
   background-color: var(--background-color);

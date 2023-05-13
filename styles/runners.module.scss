@@ -3,7 +3,8 @@
   position: fixed;
   top: 0;
   z-index: 10;
-  width: var(--max-width);
+  max-width: var(--max-width);
+  width: 100%;
   display: flex;
   justify-content: space-between;
   background-color: var(--tertiary-color);
@@ -56,7 +57,7 @@
 .footerContainer {
   position: absolute;
   bottom: 0;
-  width: var(--max-width);
+  max-width: var(--max-width);
   height: 7em;
   background-color: var(--tertiary-color);
   color: var(--font-secondary);
