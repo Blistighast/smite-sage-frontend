@@ -55,7 +55,6 @@
 }
 
 .godCard svg {
-  // need to figure out how to change color of actual svg
   background-color: transparent;
   max-width: var(--card-width);
   position: absolute;
@@ -63,11 +62,7 @@
 }
 
 .lowerFrame {
-  // background-image: url("/lowerFrame.svg");
-  // background-repeat: no-repeat;
   position: relative;
-  // top: -3rem;
-  // display: flex;
   max-width: var(--card-width);
   justify-content: space-between;
 }

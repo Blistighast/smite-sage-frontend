@@ -21,9 +21,7 @@ const GodsPage = ({ gods }: GodsProps) => {
 };
 
 export async function getStaticProps() {
-  const resp = await fetch(`${serverUrl}/getgods`, {
-    // next: { revalidate: 60 * 60 * 24 },
-  });
+  const resp = await fetch(`${serverUrl}/getgods`);
   const godsData = await resp.json();
   return {
     props: { gods: godsData },

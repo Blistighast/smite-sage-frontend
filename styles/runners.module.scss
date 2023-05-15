@@ -28,7 +28,6 @@
 .navContainer {
   display: flex;
   gap: 2em;
-  // padding-right: 1em;
 }
 
 .navContainer a {
@@ -36,7 +35,6 @@
   font-size: 1.5em;
   margin: auto;
   padding: 0 0.5em;
-  // border-bottom: 2px solid var(--primary-color);
   border-bottom: 2px solid;
   border-image-source: var(--gold-gradient);
   border-image-slice: 20;

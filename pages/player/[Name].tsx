@@ -45,28 +45,9 @@ export default function PlayerPage() {
   useEffect(() => {
     if (router.isReady) {
       const { Name } = router.query;
-      // console.log("router inside useEffect", router);
       setQueryName(Name);
     }
   }, [router.isReady, router.query]);
 
-  // console.log("router outside useEffect", router);
-
-  // console.log("from page", queryName);
   return <Player name={queryName} />;
 }
-
-// { player }: PlayerData
-
-// export const getServerSideProps: GetServerSideProps<{
-//   player: PlayerData;
-// }> = async (context) => {
-//   console.log("inside fetch", context.query);
-//   const playerResp = await fetch(
-//     `${serverUrl}/getplayer/${context.query.name}`
-//   );
-//   const playerData: PlayerData = await playerResp.json();
-//   return {
-//     props: { player: playerData },
-//   };
-// };

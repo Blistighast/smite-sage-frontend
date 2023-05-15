@@ -25,8 +25,6 @@ interface ItemProps {
 }
 
 const ItemCardBottom: React.FC<ItemProps> = ({ item }) => {
-  // consumable, relic, starter item, passive, glyph?, evolved?
-
   const itemGroup = (item: ItemProps["item"]) => {
     if (item.Type === "Consumable") return "consumable";
     if (item.Type === "Active") return "relic";

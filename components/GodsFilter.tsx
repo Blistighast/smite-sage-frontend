@@ -24,10 +24,6 @@ const GodsFilter: React.FC<any> = ({ gods, filteredGods, setFilteredGods }) => {
     router.push(`/god/${filteredGods[0].id}`);
   };
 
-  // const activeFilter = (path: string) => {
-  //   return  ? styles.active : "";
-  // };
-
   return (
     <div className={styles.search}>
       <form onSubmit={(e) => goToGodPage(e)}>

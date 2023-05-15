@@ -44,8 +44,6 @@ const Player: React.FC<queryProps> = ({ name }) => {
   useEffect(() => {
     setLoading(true);
 
-    // console.log("from component", name);
-
     const fetchData = async () => {
       const res = await fetch(`${serverUrl}/getplayer/${name}`);
       const playerData = await res.json();
@@ -78,7 +76,7 @@ const Player: React.FC<queryProps> = ({ name }) => {
             <h3>Level {player.Level}</h3>
             <p>Mastery Level {player.MasteryLevel}</p>
             <p>Wins: {player.Wins}</p>
-            <p>Lossed: {player.Losses}</p>
+            <p>Losses: {player.Losses}</p>
             <p>Leaves: {player.Leaves}</p>
             <p>Achievements: {player.Total_Achievements}</p>
             <p>Worshippers: {player.Total_Worshippers}</p>

@@ -33,26 +33,11 @@
   position: relative;
   border: 1px solid transparent;
   border-radius: 8px;
-  // background-clip: padding-box;
-  // border-image-source: var(--gold-gradient);
-  // border-image-slice: 1;
 }
 
 .search input:focus {
   box-shadow: 0 0 15px gold;
 }
-
-// .search input::after {
-//   position: absolute;
-//   top: -2px;
-//   bottom: -2px;
-//   left: -2px;
-//   right: -2px;
-//   background: var(--gold-gradient);
-//   content: "";
-//   z-index: -1;
-//   border-radius: 8px;
-// }
 
 .search button {
   background: var(--tertiary-color);
@@ -62,9 +47,6 @@
   border: 2px solid transparent;
   background-clip: padding-box;
   border-radius: 8px;
-  // below doesnt allow for border radius
-  // border-image-source: var(--gold-gradient);
-  // border-image-slice: 1;
 }
 
 .search button::after,

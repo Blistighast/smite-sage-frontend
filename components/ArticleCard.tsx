@@ -2,7 +2,6 @@ import Link from "next/link";
 import { DateTime } from "luxon";
 
 import styles from "@/styles/homepage.module.scss";
-import Image from "next/image";
 
 interface ArticleProps {
   article: {

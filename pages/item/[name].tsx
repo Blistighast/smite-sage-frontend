@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
 
 import ItemPage from "../../components/ItemPage";
