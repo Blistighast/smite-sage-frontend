@@ -29,7 +29,6 @@ const GodCard: React.FC<GodProps> = ({ god }) => {
           // small picture
           src={god.godIcon_URL}
           alt={`picture of ${god.Name}`}
-          // fill
           width={160}
           height={160}
         />
