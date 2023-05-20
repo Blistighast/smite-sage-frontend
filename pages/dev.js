@@ -27,25 +27,25 @@ const DevPage = () => {
   };
 
   const handleCreateSession = async () => {
-    const resp = await fetch(`${serverUrl}/createsession`);
+    const resp = await fetch(`${serverUrl}/smiteapi/createsession`);
     const data = await resp.json();
     console.log(data);
   };
 
   const handleTestSession = async () => {
-    const resp = await fetch(`${serverUrl}/testsession`);
+    const resp = await fetch(`${serverUrl}/smiteapi/testsession`);
     const data = await resp.json();
     console.log(data);
   };
 
   const handleGetPatchNotes = async () => {
-    const resp = await fetch(`${serverUrl}/patchnotes`);
+    const resp = await fetch(`${serverUrl}/smiteapi/patchnotes`);
     const data = await resp.json();
     console.log(data);
   };
 
   const handleGetUsedData = async () => {
-    const resp = await fetch(`${serverUrl}/getuseddata`);
+    const resp = await fetch(`${serverUrl}/smiteapi/getuseddata`);
     const data = await resp.json();
     console.log(data);
   };
