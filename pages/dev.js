@@ -51,7 +51,7 @@ const DevPage = () => {
   };
 
   const handleGetGods = async () => {
-    const resp = await fetch(`${serverUrl}/getgods`);
+    const resp = await fetch(`${serverUrl}/gods`);
     const data = await resp.json();
     console.log(data);
   };
@@ -63,7 +63,7 @@ const DevPage = () => {
   };
 
   const handleGodCount = async () => {
-    const resp = await fetch(`${serverUrl}/devcountgods`);
+    const resp = await fetch(`${serverUrl}/gods/godscount`);
     const countData = await resp.json();
     console.log(countData);
   };

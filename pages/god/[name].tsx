@@ -9,7 +9,7 @@ export default function SingleGodPage({ god }: GodData) {
 }
 
 export async function getStaticPaths() {
-  const resp = await fetch(`${serverUrl}/getgods`);
+  const resp = await fetch(`${serverUrl}/gods`);
   const godsData = await resp.json();
 
   const paths = godsData.map((god: GodData["god"]) => ({
