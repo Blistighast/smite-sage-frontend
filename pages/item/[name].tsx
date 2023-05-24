@@ -9,7 +9,7 @@ export default function SingleItemPage({ item }: ItemData) {
 }
 
 export async function getStaticPaths() {
-  const resp = await fetch(`${serverUrl}/getitems`);
+  const resp = await fetch(`${serverUrl}/items`);
   const itemsData = await resp.json();
 
   const paths = itemsData.map((item: ItemData["item"]) => ({

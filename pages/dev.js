@@ -57,7 +57,7 @@ const DevPage = () => {
   };
 
   const handleGetItems = async () => {
-    const resp = await fetch(`${serverUrl}/getitems`);
+    const resp = await fetch(`${serverUrl}/items`);
     const data = await resp.json();
     console.log(data);
   };
