@@ -77,7 +77,7 @@ const DevPage = () => {
   const handleGetPlayer = async (e) => {
     e.preventDefault();
     const resp = await fetch(
-      `${serverUrl}/getplayer/${playerSearch.toLowerCase()}`
+      `${serverUrl}/player/${playerSearch.toLowerCase()}`
     );
     const data = await resp.json();
     console.log(data);
