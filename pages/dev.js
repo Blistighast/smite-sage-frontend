@@ -69,7 +69,7 @@ const DevPage = () => {
   };
 
   const handleWebScraper = async () => {
-    const res = await fetch(`${serverUrl}/checkscraper`);
+    const res = await fetch(`${serverUrl}/article/checkscraper`);
     const scrapeData = await res.json();
     console.log(scrapeData);
   };
