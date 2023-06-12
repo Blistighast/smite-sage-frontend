@@ -9,7 +9,7 @@ const DevPage = () => {
   const [playerSearch, setPlayerSearch] = useState();
 
   const handleManualUpdate = async () => {
-    const resp = await fetch(`${serverUrl}/devmanualupdate`);
+    const resp = await fetch(`${serverUrl}/smiteapi/devmanualupdate`);
     const data = await resp.json();
     console.log(data);
   };
