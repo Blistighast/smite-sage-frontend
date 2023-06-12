@@ -8,8 +8,8 @@ const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 const DevPage = () => {
   const [playerSearch, setPlayerSearch] = useState();
 
-  const handleManualUpdate = async () => {
-    const resp = await fetch(`${serverUrl}/smiteapi/devmanualupdate`);
+  const handleSmiteDbUpdate = async () => {
+    const resp = await fetch(`${serverUrl}/smiteapi/manualdbupdate`);
     const data = await resp.json();
     console.log(data);
   };
@@ -89,7 +89,9 @@ const DevPage = () => {
 
   return (
     <div className={styles.dev}>
-      <button onClick={() => handleManualUpdate()}>Update Server</button>
+      <button onClick={() => handleSmiteDbUpdate()}>
+        Update Smite database
+      </button>
       <div className={styles.devButtons}>
         <button onClick={() => handlePing()}>Ping server</button>
         <button onClick={() => handleSmitePing()}>Ping Smite API</button>
