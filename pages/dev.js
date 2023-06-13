@@ -14,6 +14,12 @@ const DevPage = () => {
     console.log(data);
   };
 
+  const handleArticleUpdate = async () => {
+    const resp = await fetch(`${serverUrl}/article/articleUpdate`);
+    const data = await resp.json();
+    console.log(data);
+  };
+
   const handlePing = async () => {
     const resp = await fetch(`${serverUrl}/api`);
     const data = await resp.json();
@@ -92,6 +98,7 @@ const DevPage = () => {
       <button onClick={() => handleSmiteDbUpdate()}>
         Update Smite database
       </button>
+      <button onClick={() => handleArticleUpdate()}>Update Articles</button>
       <div className={styles.devButtons}>
         <button onClick={() => handlePing()}>Ping server</button>
         <button onClick={() => handleSmitePing()}>Ping Smite API</button>
