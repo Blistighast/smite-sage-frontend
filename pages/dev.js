@@ -15,7 +15,7 @@ const DevPage = () => {
   };
 
   const handleArticleUpdate = async () => {
-    const resp = await fetch(`${serverUrl}/article/articleUpdate`);
+    const resp = await fetch(`${serverUrl}/article/articleupdate`);
     const data = await resp.json();
     console.log(data);
   };
