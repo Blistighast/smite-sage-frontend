@@ -62,6 +62,12 @@ const DevPage = () => {
     console.log(data);
   };
 
+  const handleRecommendedItems = async () => {
+    const resp = await fetch(`${serverUrl}/gods/recommendeditems/3492`);
+    const data = await resp.json();
+    console.log(data);
+  };
+
   const handleGetItems = async () => {
     const resp = await fetch(`${serverUrl}/items`);
     const data = await resp.json();
@@ -108,6 +114,9 @@ const DevPage = () => {
         <button onClick={() => handleGetUsedData()}>Get Data Used</button>
         <button onClick={() => handleGetGods()}>Get Gods</button>
         <button onClick={() => handleGetItems()}>Get Items</button>
+        <button onClick={() => handleRecommendedItems()}>
+          Check Achilles recommended Items
+        </button>
         <button onClick={() => handleGodCount()}>Count Gods</button>
         <button onClick={() => handleWebScraper()}>Check Smite Scraper</button>
       </div>
