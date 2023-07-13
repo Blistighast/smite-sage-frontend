@@ -7,6 +7,7 @@ const generate = async () => {
   const pages = await globby([
     "pages/*.js",
     "pages/*.tsx",
+    ".next/server/pages/god/*.html",
     "!pages/player",
     "!pages/dev*",
     "!pages/api",
@@ -23,6 +24,8 @@ const generate = async () => {
             const path = page
               .replace("pages", "")
               .replace("data", "")
+              .replace(".next/server/", "")
+              .replace(".html", "")
               .replace(".js", "")
               .replace(".tsx", "")
               .replace(".mdx", "");

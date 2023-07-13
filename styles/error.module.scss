@@ -1,0 +1,34 @@
+.error404 {
+  height: 75vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error404H1 {
+  color: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  margin: 0;
+  margin-right: 20px;
+  padding: 0 23px 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  vertical-align: top;
+  line-height: 49px;
+}
+
+.error404p {
+  color: white;
+  text-align: left;
+  line-height: 49px;
+  height: 49px;
+  vertical-align: middle;
+}
+
+@media (prefers-color-scheme: dark) {
+  .error404H1 {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
