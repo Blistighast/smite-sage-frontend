@@ -8,6 +8,7 @@ const generate = async () => {
     "pages/*.js",
     "pages/*.tsx",
     ".next/server/pages/god/*.html",
+    ".next/server/pages/item/*.html",
     "!pages/player",
     "!pages/dev*",
     "!pages/api",
