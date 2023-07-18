@@ -48,7 +48,10 @@
 
   --max-width: 1100px;
   --box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.25);
-  --card-width: 175px
+  --card-width: 180px;
+  --web-runner-height: 7em;
+  --phone-header-height: 11em;
+  --phone-footer-height: 13em;
   box-sizing: border-box;
   
   /* makes font 10px, for easy sizing, but still overridable for accessability  */
@@ -103,6 +106,20 @@ main {
 
 input::placeholder {
   color: lightgrey;
+}
+
+@media (max-width: 900px) {
+  main {
+    padding-top: var(--phone-header-height);
+    padding-bottom: var(--phone-header-height);
+  }
+}
+
+@media (max-width: 650px) {
+  main {
+    /* padding-bottom: var(--phone-footer-height); */
+    padding-bottom: 14em;
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {

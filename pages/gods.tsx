@@ -21,7 +21,7 @@ const GodsPage = ({ gods }: GodsProps) => {
 };
 
 export async function getStaticProps() {
-  const resp = await fetch(`${serverUrl}/getgods`);
+  const resp = await fetch(`${serverUrl}/gods`);
   const godsData = await resp.json();
   return {
     props: { gods: godsData },

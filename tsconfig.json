@@ -26,7 +26,8 @@
     "pages/indexOld.tsx",
     "pages/god/[name].tsx",
     "components/GodPage.tsx",
-    "components/LowerFrameSvg.tsx"
+    "components/LowerFrameSvg.tsx",
+    "scripts/generateSitemap.mjs"
   ],
   "exclude": ["node_modules"]
 }

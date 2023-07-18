@@ -45,7 +45,8 @@ const Player: React.FC<queryProps> = ({ name }) => {
     setLoading(true);
 
     const fetchData = async () => {
-      const res = await fetch(`${serverUrl}/getplayer/${name}`);
+      const res = await fetch(`${serverUrl}/player/${name}`);
+
       const playerData = await res.json();
       setPlayer(playerData);
       setLoading(false);

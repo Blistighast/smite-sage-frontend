@@ -8,8 +8,14 @@ const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 const DevPage = () => {
   const [playerSearch, setPlayerSearch] = useState();
 
-  const handleManualUpdate = async () => {
-    const resp = await fetch(`${serverUrl}/devmanualupdate`);
+  const handleSmiteDbUpdate = async () => {
+    const resp = await fetch(`${serverUrl}/smiteapi/manualdbupdate`);
+    const data = await resp.json();
+    console.log(data);
+  };
+
+  const handleArticleUpdate = async () => {
+    const resp = await fetch(`${serverUrl}/article/articleupdate`);
     const data = await resp.json();
     console.log(data);
   };
@@ -27,49 +33,55 @@ const DevPage = () => {
   };
 
   const handleCreateSession = async () => {
-    const resp = await fetch(`${serverUrl}/createsession`);
+    const resp = await fetch(`${serverUrl}/smiteapi/createsession`);
     const data = await resp.json();
     console.log(data);
   };
 
   const handleTestSession = async () => {
-    const resp = await fetch(`${serverUrl}/testsession`);
+    const resp = await fetch(`${serverUrl}/smiteapi/testsession`);
     const data = await resp.json();
     console.log(data);
   };
 
   const handleGetPatchNotes = async () => {
-    const resp = await fetch(`${serverUrl}/patchnotes`);
+    const resp = await fetch(`${serverUrl}/smiteapi/patchnotes`);
     const data = await resp.json();
     console.log(data);
   };
 
   const handleGetUsedData = async () => {
-    const resp = await fetch(`${serverUrl}/getuseddata`);
+    const resp = await fetch(`${serverUrl}/smiteapi/getuseddata`);
     const data = await resp.json();
     console.log(data);
   };
 
   const handleGetGods = async () => {
-    const resp = await fetch(`${serverUrl}/getgods`);
+    const resp = await fetch(`${serverUrl}/gods`);
+    const data = await resp.json();
+    console.log(data);
+  };
+
+  const handleRecommendedItems = async () => {
+    const resp = await fetch(`${serverUrl}/gods/recommendeditems/3492`);
     const data = await resp.json();
     console.log(data);
   };
 
   const handleGetItems = async () => {
-    const resp = await fetch(`${serverUrl}/getitems`);
+    const resp = await fetch(`${serverUrl}/items`);
     const data = await resp.json();
     console.log(data);
   };
 
   const handleGodCount = async () => {
-    const resp = await fetch(`${serverUrl}/devcountgods`);
+    const resp = await fetch(`${serverUrl}/gods/godscount`);
     const countData = await resp.json();
     console.log(countData);
   };
 
   const handleWebScraper = async () => {
-    const res = await fetch(`${serverUrl}/checkscraper`);
+    const res = await fetch(`${serverUrl}/article/checkscraper`);
     const scrapeData = await res.json();
     console.log(scrapeData);
   };
@@ -77,7 +89,7 @@ const DevPage = () => {
   const handleGetPlayer = async (e) => {
     e.preventDefault();
     const resp = await fetch(
-      `${serverUrl}/getplayer/${playerSearch.toLowerCase()}`
+      `${serverUrl}/player/${playerSearch.toLowerCase()}`
     );
     const data = await resp.json();
     console.log(data);
@@ -89,7 +101,10 @@ const DevPage = () => {
 
   return (
     <div className={styles.dev}>
-      <button onClick={() => handleManualUpdate()}>Update Server</button>
+      <button onClick={() => handleSmiteDbUpdate()}>
+        Update Smite database
+      </button>
+      <button onClick={() => handleArticleUpdate()}>Update Articles</button>
       <div className={styles.devButtons}>
         <button onClick={() => handlePing()}>Ping server</button>
         <button onClick={() => handleSmitePing()}>Ping Smite API</button>
@@ -99,6 +114,9 @@ const DevPage = () => {
         <button onClick={() => handleGetUsedData()}>Get Data Used</button>
         <button onClick={() => handleGetGods()}>Get Gods</button>
         <button onClick={() => handleGetItems()}>Get Items</button>
+        <button onClick={() => handleRecommendedItems()}>
+          Check Achilles recommended Items
+        </button>
         <button onClick={() => handleGodCount()}>Count Gods</button>
         <button onClick={() => handleWebScraper()}>Check Smite Scraper</button>
       </div>

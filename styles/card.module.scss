@@ -9,11 +9,11 @@
   background-color: var(--tertiary-color);
   text-transform: uppercase;
   border: 3px solid;
-  max-width: var(--card-width);
+  // max-width: var(--card-width);
   border-image-source: var(--gold-gradient);
   border-image-slice: 40;
-  padding: none;
   box-shadow: var(--box-shadow);
+  // box-sizing: content-box;
 }
 
 .godCard:hover {

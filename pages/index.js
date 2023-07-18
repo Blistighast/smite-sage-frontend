@@ -36,7 +36,7 @@ export async function getStaticProps() {
   const seasonInfoResp = await fetch(`${serverUrl}/article/seasonInfo`);
   const seasonInfoData = await seasonInfoResp.json();
 
-  const latestGodResp = await fetch(`${serverUrl}/latestGod`);
+  const latestGodResp = await fetch(`${serverUrl}/gods/latestGod`);
   const latestGodData = await latestGodResp.json();
 
   return {
