@@ -14,7 +14,7 @@ const generate = async () => {
     "!pages/api",
     "!pages/_*.js",
     "!pages/_*.tsx",
-    "!pages/404.js",
+    "!pages/404*",
   ]);
 
   const sitemap = `
