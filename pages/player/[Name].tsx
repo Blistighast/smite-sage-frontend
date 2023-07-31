@@ -14,5 +14,6 @@ export default function PlayerPage() {
     setQueryName(searchParams.get("name"));
   }, [searchParams]);
 
-  return <Player name={queryName} />;
+  return <Player name={searchParams.get("name")} />;
+  // return <Player name={queryName} />;
 }
