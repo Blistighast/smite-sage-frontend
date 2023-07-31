@@ -35,7 +35,8 @@ interface queryProps {
   name: string | string[] | undefined;
 }
 
-const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
+// const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
+const serverUrl = "https://api.smitesage.com";
 
 const Player: React.FC<queryProps> = ({ name }) => {
   const [player, setPlayer] = useState<Player>();
