@@ -52,11 +52,11 @@ const Player: React.FC<queryProps> = ({ name }) => {
       setLoading(false);
     };
 
-    fetchData();
+    // fetchData();
 
-    // if (name) {
-    //   fetchData();
-    // }
+    if (name) {
+      fetchData();
+    }
   }, [name]);
 
   if (isLoading) return <p>Loading...</p>;
