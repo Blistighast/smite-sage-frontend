@@ -32,11 +32,10 @@ interface Player {
 }
 
 interface queryProps {
-  name: string | string[] | undefined;
+  name: string | string[] | undefined | null;
 }
 
 const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
-// const serverUrl = "https://api.smitesage.com";
 
 const Player: React.FC<queryProps> = ({ name }) => {
   const [player, setPlayer] = useState<Player>();
@@ -46,21 +45,16 @@ const Player: React.FC<queryProps> = ({ name }) => {
     setLoading(true);
 
     const fetchData = async () => {
-      console.log(`${serverUrl}/player/${name}`);
       const res = await fetch(`${serverUrl}/player/${name}`);
-      console.log(name);
-      console.log(res);
 
       const playerData = await res.json();
       setPlayer(playerData);
       setLoading(false);
     };
 
-    fetchData();
-
-    // if (name) {
-    //   fetchData();
-    // }
+    if (name) {
+      fetchData();
+    }
   }, [name]);
 
   if (isLoading) return <p>Loading...</p>;
