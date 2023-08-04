@@ -7,6 +7,5 @@ export const dynamic = "force-dynamic"; //should fix search params bug of empty 
 export default function PlayerPage() {
   const pathname = usePathname();
 
-  console.log(pathname?.replace("/player/", ""));
   return <Player name={pathname?.replace("/player/", "")} />;
 }
