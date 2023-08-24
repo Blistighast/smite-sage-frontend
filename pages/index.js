@@ -49,6 +49,6 @@ export async function getStaticProps() {
       ],
       latestGod: latestGodData[0],
     },
-    revalidate: 60 * 60 * 24,
+    revalidate: 60 * 60,
   };
 }
