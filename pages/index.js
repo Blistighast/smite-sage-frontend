@@ -3,10 +3,15 @@ import Head from "next/head";
 import styles from "@/styles/homepage.module.scss";
 import Articles from "./../components/Articles";
 import GodCard from "./../components/GodCard";
+import { useEffect } from "react";
 
 const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
 export default function Home({ articles, latestGod }) {
+  useEffect(() => {
+    console.log(latestGod);
+  });
+
   return (
     <>
       <Head>
@@ -18,8 +23,12 @@ export default function Home({ articles, latestGod }) {
       <div className={styles.homeContainer}>
         <Articles articles={articles} />
         <div className={styles.latestGod}>
-          <h2>Latest God</h2>
-          <GodCard god={latestGod} />
+          <h2>Latest Gods</h2>
+          {/* {latestGod.map((god) => {
+            <GodCard god={god} />;
+          })} */}
+          {/* <GodCard god={latestGod} />
+          <GodCard god={latestGod} /> */}
         </div>
       </div>
     </>
@@ -48,6 +57,7 @@ export async function getStaticProps() {
         seasonInfoData[0],
       ],
       latestGod: latestGodData[0],
+      // latestGod: latestGodData,
     },
     revalidate: 60 * 60,
   };

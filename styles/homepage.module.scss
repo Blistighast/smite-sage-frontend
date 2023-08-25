@@ -138,6 +138,12 @@
 
 .latestGod {
   grid-area: latestGod;
+  // margin-top: 2em;
+}
+
+.latestGod a:last-child {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
 }
 
 .latestGod h2 {
