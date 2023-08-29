@@ -7,7 +7,6 @@ import GodSkin from "./GodSkin";
 import GodSkins from "./GodSkins";
 
 export default function GodPage({ god }: GodData) {
-  const skinSortOrder = ["Normal", "Exclusive", "Limited"];
   const [godAbilities, setGodAbilities] = useState<GodAbility[]>();
 
   useEffect(() => {
@@ -117,18 +116,6 @@ export default function GodPage({ god }: GodData) {
               )}
             </div>
             <GodSkins skins={god.skins} />
-            {/* <div className={styles.skinContainer}>
-              {god.skins
-                .filter((skin) => skin.godSkin_URL)
-                .sort(
-                  (a, b) =>
-                    skinSortOrder.indexOf(a.obtainability) -
-                    skinSortOrder.indexOf(b.obtainability)
-                )
-                .map((skin) => (
-                  <GodSkin key={skin.skin_id1} skin={skin} />
-                ))}
-            </div> */}
           </div>
         ) : (
           <p>Loading...</p>
