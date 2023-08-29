@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import styles from "@/styles/godPage.module.scss";
 import Link from "next/link";
 import GodSkin from "./GodSkin";
+import GodSkins from "./GodSkins";
 
 export default function GodPage({ god }: GodData) {
   const skinSortOrder = ["Normal", "Exclusive", "Limited"];
@@ -115,7 +116,8 @@ export default function GodPage({ god }: GodData) {
                 )
               )}
             </div>
-            <div className={styles.skinContainer}>
+            <GodSkins skins={god.skins} />
+            {/* <div className={styles.skinContainer}>
               {god.skins
                 .filter((skin) => skin.godSkin_URL)
                 .sort(
@@ -126,7 +128,7 @@ export default function GodPage({ god }: GodData) {
                 .map((skin) => (
                   <GodSkin key={skin.skin_id1} skin={skin} />
                 ))}
-            </div>
+            </div> */}
           </div>
         ) : (
           <p>Loading...</p>
