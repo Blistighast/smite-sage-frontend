@@ -2,7 +2,7 @@ import styles from "@/styles/godPage.module.scss";
 
 import GodSkin from "./GodSkin";
 
-const GodSkins: React.FC<Skins> = ({ skins }) => {
+const GodSkins = ({ skins }: SkinsProps) => {
   const skinSortOrder = ["Normal", "Exclusive", "Limited"];
 
   return (
@@ -23,7 +23,7 @@ const GodSkins: React.FC<Skins> = ({ skins }) => {
 
 export default GodSkins;
 
-interface Skins {
+interface SkinsProps {
   skins: [
     {
       skin_id1: number;
