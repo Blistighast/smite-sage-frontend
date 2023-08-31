@@ -143,10 +143,3 @@ interface GodData {
     };
   };
 }
-
-interface GodAbility {
-  id: number | null;
-  abilityName: string;
-  iconUrl: string;
-  description: string;
-}
