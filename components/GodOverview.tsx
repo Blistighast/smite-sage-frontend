@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import styles from "@/styles/godPage.module.scss";
 
-const GodOverview = ({ god }) => {
+const GodOverview = ({ god }: GodData) => {
   return (
     <div className={styles.overviewContainer}>
       <div>
@@ -53,3 +53,17 @@ const GodOverview = ({ god }) => {
 };
 
 export default GodOverview;
+
+interface GodData {
+  god: {
+    id: number;
+    Name: string;
+    Title: string;
+    Lore: string;
+    godIcon_URL: string;
+    Type: string;
+    Pantheon: string;
+    Roles: string;
+    Pros: string;
+  };
+}
