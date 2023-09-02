@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "@/styles/godPage.module.scss";
+import GodTitleCard from "./GodTitleCard";
 
 const GodOverview = ({ god }: GodData) => {
   return (
@@ -15,6 +16,7 @@ const GodOverview = ({ god }: GodData) => {
         <hr />
         <p className={styles.lore}>{god.Lore.replaceAll("\\n\\n", "\n\n")}</p>
       </div>
+      <GodTitleCard god={god} />
       <div className={styles.titleCard}>
         <h2>{god.Name}</h2>
         <h3>{god.Title}</h3>
