@@ -7,6 +7,7 @@ export default function GodPage({ god }: GodData) {
   return (
     <div>
       <div className={styles.tab}>
+        <div>tabs here</div>
         {god ? (
           <div className={styles.godPage}>
             <GodOverview god={god} />
