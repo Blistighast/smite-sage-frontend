@@ -78,10 +78,10 @@
   border-bottom-left-radius: 6px;
 }
 
-.latestGod {
-  // grid-area: latestGod;
-  // margin-top: 2em;
-}
+// .latestGod {
+//   // grid-area: latestGod;
+//   // margin-top: 2em;
+// }
 
 .latestGod a:last-child {
   margin-top: 1rem;
@@ -149,4 +149,22 @@
 .shineContainer:has(:first-child:hover)::before,
 .shineContainer:has(:last-child:hover)::before {
   transition: transform 500ms, opacity 250ms;
+}
+
+@media (max-width: 650px) {
+  .articles {
+    // flex-basis: 75%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "major major "
+      "minor minor"
+      "godInfo godInfo"
+      "seasonInfo  seasonInfo";
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 1em;
+    position: relative;
+  }
 }
