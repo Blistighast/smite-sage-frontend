@@ -11,7 +11,6 @@
   flex-basis: 75%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     "major major "
     "minor godInfo"
@@ -153,18 +152,11 @@
 
 @media (max-width: 650px) {
   .articles {
-    // flex-basis: 75%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "major major "
-      "minor minor"
-      "godInfo godInfo"
-      "seasonInfo  seasonInfo";
-    justify-content: center;
-    gap: 1rem;
-    padding-bottom: 1em;
-    position: relative;
+      "major"
+      "minor"
+      "godInfo"
+      "seasonInfo";
   }
 }
