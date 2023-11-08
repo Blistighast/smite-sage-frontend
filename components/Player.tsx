@@ -32,7 +32,7 @@ interface Player {
 }
 
 interface queryProps {
-  name: string | string[] | undefined | null;
+  name: string | string[] | undefined;
 }
 
 const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
@@ -51,8 +51,6 @@ const Player: React.FC<queryProps> = ({ name }) => {
       setPlayer(playerData);
       setLoading(false);
     };
-
-    // fetchData();
 
     if (name) {
       fetchData();

@@ -18,8 +18,10 @@ export default function Home({ articles, latestGod }) {
       <div className={styles.homeContainer}>
         <Articles articles={articles} />
         <div className={styles.latestGod}>
-          <h2>Latest God</h2>
-          <GodCard god={latestGod} />
+          <h2>Latest Gods</h2>
+          {latestGod.map((god) => (
+            <GodCard key={god._id} god={god} />
+          ))}
         </div>
       </div>
     </>
@@ -47,8 +49,8 @@ export async function getStaticProps() {
         godInfoData[0],
         seasonInfoData[0],
       ],
-      latestGod: latestGodData[0],
+      latestGod: latestGodData,
     },
-    revalidate: 60 * 60 * 24,
+    revalidate: 60 * 60,
   };
 }

@@ -25,7 +25,7 @@ export async function getStaticProps() {
   const godsData = await resp.json();
   return {
     props: { gods: godsData },
-    revalidate: 60 * 60 * 24, //in seconds
+    revalidate: 60 * 60, //in seconds
   };
 }
 

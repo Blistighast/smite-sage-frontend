@@ -1,132 +1,18 @@
-import Image from "next/image";
-import { useState, useEffect } from "react";
-
 import styles from "@/styles/godPage.module.scss";
-import Link from "next/link";
-import GodSkin from "./GodSkin";
+import GodSkins from "./GodSkins";
+import GodAbilities from "./GodAbilities";
+import GodOverview from "./GodOverview";
 
 export default function GodPage({ god }: GodData) {
-  const skinSortOrder = ["Normal", "Exclusive", "Limited"];
-  const [godAbilities, setGodAbilities] = useState<GodAbility[]>();
-
-  useEffect(() => {
-    setGodAbilities([
-      {
-        id: god.AbilityId1,
-        abilityName: god.Ability1,
-        iconUrl: god.godAbility1_URL,
-        description: god.Ability_1.Description.itemDescription.description,
-      },
-      {
-        id: god.AbilityId2,
-        abilityName: god.Ability2,
-        iconUrl: god.godAbility2_URL,
-        description: god.Ability_2.Description.itemDescription.description,
-      },
-      {
-        id: god.AbilityId3,
-        abilityName: god.Ability3,
-        iconUrl: god.godAbility3_URL,
-        description: god.Ability_3.Description.itemDescription.description,
-      },
-      {
-        id: god.AbilityId4,
-        abilityName: god.Ability4,
-        iconUrl: god.godAbility4_URL,
-        description: god.Ability_4.Description.itemDescription.description,
-      },
-      {
-        id: god.AbilityId5,
-        abilityName: god.Ability5,
-        iconUrl: god.godAbility5_URL,
-        description: god.Ability_5.Description.itemDescription.description,
-      },
-    ]);
-  }, [god]);
-
   return (
     <div>
-      <div>
+      <div className={styles.tab}>
+        <div>tabs here</div>
         {god ? (
           <div className={styles.godPage}>
-            <div className={styles.overviewContainer}>
-              <div>
-                <p>
-                  {god.Name} is a <Link href={`/gods/`}>god</Link> in{" "}
-                  <Link href={`/`}>Smite</Link>.
-                </p>
-                <h3>Lore</h3>
-                <hr />
-                <p className={styles.lore}>
-                  {god.Lore.replaceAll("\\n\\n", "\n\n")}
-                </p>
-              </div>
-              <div className={styles.titleCard}>
-                <h2>{god.Name}</h2>
-                <h3>{god.Title}</h3>
-
-                <Image
-                  src={god.godIcon_URL}
-                  alt={`picture of ${god.Name}`}
-                  width={180}
-                  height={210}
-                />
-                <p>{god.Type}</p>
-                <p>{god.Pros}</p>
-                <div className={styles.godType}>
-                  <div>
-                    <Image
-                      src={`/class_icons/${god.Roles}.webp`}
-                      alt="Role Icon"
-                      width={50}
-                      height={50}
-                    />
-                    {god.Roles}
-                  </div>
-                  <div>
-                    <Image
-                      src={`/pantheon_icons/${god.Pantheon}.webp`}
-                      alt="Pantheon Icon"
-                      width={50}
-                      height={50}
-                    />
-                    {god.Pantheon}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.abilitiesContainer}>
-              {godAbilities?.map(
-                ({ id, abilityName, iconUrl, description }) => (
-                  <div className={styles.ability} key={id}>
-                    <h4>{abilityName}</h4>
-                    <Image
-                      src={iconUrl}
-                      alt={`icon for ${iconUrl}`}
-                      width={70}
-                      height={70}
-                    />
-                    <p>
-                      {description
-                        .replace("<n>", "\n\n")
-                        .replaceAll(/<.*?>/g, "")}
-                    </p>
-                  </div>
-                )
-              )}
-            </div>
-            <div className={styles.skinContainer}>
-              {god.skins
-                .filter((skin) => skin.godSkin_URL)
-                .sort(
-                  (a, b) =>
-                    skinSortOrder.indexOf(a.obtainability) -
-                    skinSortOrder.indexOf(b.obtainability)
-                )
-                .map((skin) => (
-                  <GodSkin key={skin.skin_id1} skin={skin} />
-                ))}
-            </div>
+            <GodOverview god={god} />
+            <GodAbilities god={god} />
+            <GodSkins skins={god.skins} />
           </div>
         ) : (
           <p>Loading...</p>
@@ -210,11 +96,4 @@ interface GodData {
       };
     };
   };
-}
-
-interface GodAbility {
-  id: number | null;
-  abilityName: string;
-  iconUrl: string;
-  description: string;
 }

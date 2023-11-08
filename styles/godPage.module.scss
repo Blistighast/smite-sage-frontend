@@ -4,6 +4,10 @@
   margin: 1rem;
 }
 
+.tab {
+  display: flex;
+}
+
 .overviewContainer {
   display: grid;
   grid-template-columns: 2fr 1fr;
