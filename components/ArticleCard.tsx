@@ -60,7 +60,6 @@ const ArticleCard: React.FC<ArticleProps> = ({ article }) => {
       {articleTypeDisplay}
       <div className={styles.articleInfo}>
         <h3>{article.headline}</h3>
-        {/* <p>{DateTime.fromISO(article.datePosted).toRelative()}</p> */}
         <p>{postDate}</p>
       </div>
       <span className={styles.shine}></span>
