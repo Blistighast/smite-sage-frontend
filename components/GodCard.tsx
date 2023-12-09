@@ -31,6 +31,7 @@ const GodCard: React.FC<GodProps> = ({ god }) => {
           alt={`picture of ${god.Name}`}
           width={160}
           height={160}
+          unoptimized
         />
       )}
       <LowerFrameSvg width={180} height={100} color={"#031329"} />
@@ -41,6 +42,7 @@ const GodCard: React.FC<GodProps> = ({ god }) => {
             alt="Role Icon"
             width={43}
             height={43}
+            unoptimized
           />
         </div>
         <div className={styles.pantheon}>
