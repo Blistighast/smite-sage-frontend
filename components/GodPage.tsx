@@ -2,17 +2,22 @@ import styles from "@/styles/godPage.module.scss";
 import GodSkins from "./GodSkins";
 import GodAbilities from "./GodAbilities";
 import GodOverview from "./GodOverview";
+import GodHeader from "./GodHeader";
+
+import { useState } from "react";
 
 export default function GodPage({ god }: GodData) {
+  const [tab, setTab] = useState<string>("lore");
+
   return (
     <div>
+      <GodHeader tab={tab} setTab={setTab} />
       <div className={styles.tab}>
-        {/* <div>tabs here</div> */}
         {god ? (
           <div className={styles.godPage}>
-            <GodOverview god={god} />
-            <GodAbilities god={god} />
-            <GodSkins skins={god.skins} />
+            {tab === "lore" && <GodOverview god={god} />}
+            {tab === "abilities" && <GodAbilities god={god} />}
+            {tab === "skins" && <GodSkins skins={god.skins} />}
           </div>
         ) : (
           <p>Loading...</p>
