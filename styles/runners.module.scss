@@ -7,6 +7,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: var(--tertiary-color);
   padding: 1.5em;
   height: var(--web-header-height);
@@ -23,6 +24,11 @@
   border-image-source: var(--gold-gradient);
   border-image-slice: 20;
   color: var(--font-secondary);
+}
+
+.searchNav {
+  display: flex;
+  column-gap: 5em;
 }
 
 .navContainer {
@@ -81,6 +87,12 @@
 @media (max-width: 900px) {
   .headerContainer {
     height: var(--phone-header-height);
+  }
+
+  .searchNav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
   }
 
   .navContainer {

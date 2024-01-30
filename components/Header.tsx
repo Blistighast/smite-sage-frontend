@@ -8,8 +8,10 @@ const Header: React.FC = () => {
   return (
     <div className={styles.headerContainer}>
       <Logo />
-      <Search />
-      <Nav />
+      <span className={styles.searchNav}>
+        <Search />
+        <Nav />
+      </span>
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
+import styles from "@/styles/godPage.module.scss";
+
 interface Props {
   tab: string;
   setTab: Dispatch<SetStateAction<string>>;
@@ -7,7 +9,7 @@ interface Props {
 
 const GodHeader: React.FC<Props> = ({ tab, setTab }) => {
   return (
-    <>
+    <div className={styles.godHeader}>
       <button
         onClick={() => {
           setTab("lore");
@@ -29,7 +31,7 @@ const GodHeader: React.FC<Props> = ({ tab, setTab }) => {
       >
         Skins
       </button>
-    </>
+    </div>
   );
 };
 

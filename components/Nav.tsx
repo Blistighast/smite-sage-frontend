@@ -23,8 +23,6 @@ const Nav: React.FC<NavProps> = () => {
       <Link href="/items" className={activeLink("/items")}>
         Items
       </Link>
-      {/* remove dev page later */}
-      {/* <Link href="/dev">Dev</Link> */}
     </div>
   );
 };

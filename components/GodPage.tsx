@@ -10,11 +10,11 @@ export default function GodPage({ god }: GodData) {
   const [tab, setTab] = useState<string>("lore");
 
   return (
-    <div>
+    <div className={styles.godPage}>
       <GodHeader tab={tab} setTab={setTab} />
-      <div className={styles.tab}>
+      <div>
         {god ? (
-          <div className={styles.godPage}>
+          <div className={styles.godInfo}>
             {tab === "lore" && <GodOverview god={god} />}
             {tab === "abilities" && <GodAbilities god={god} />}
             {tab === "skins" && <GodSkins skins={god.skins} />}
