@@ -3,12 +3,32 @@
 }
 
 .godHeader {
-  display: flexbox;
+  display: flex;
+  // padding: 0 1em;
   // margin-top: 2em;
+  border-color: red;
+  border-style: double;
+  border-bottom: 3px solid;
+  border-top: 3px solid;
+  border-image-source: var(--gold-gradient);
+  border-image-slice: 500;
   background-color: var(--tertiary-color);
+  justify-content: space-around;
+  // gap: 1em;
 }
 
 .godHeader button {
+  border-color: var(--gold-gradient);
+  border: none;
+  flex-grow: 1;
+  background-color: var(--tertiary-color);
+  color: white;
+  text-decoration: underline;
+  padding: 0.3em 1em;
+}
+
+.godHeader button:hover {
+  background-color: rgb(12, 45, 90);
 }
 
 .godInfo {
