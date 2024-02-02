@@ -4,10 +4,8 @@
 
 .godHeader {
   display: flex;
-  // padding: 0 1em;
   // margin-top: 2em;
-  border-color: red;
-  border-style: double;
+  // padding: 0.5em 0;
   border-bottom: 3px solid;
   border-top: 3px solid;
   border-image-source: var(--gold-gradient);
@@ -18,16 +16,20 @@
 }
 
 .godHeader button {
-  border-color: var(--gold-gradient);
   border: none;
+  padding: 0.5em 0 !important;
   flex-grow: 1;
   background-color: var(--tertiary-color);
   color: white;
   text-decoration: underline;
-  padding: 0.3em 1em;
+  font-size: 1.1em;
 }
 
 .godHeader button:hover {
+  background-color: red;
+}
+
+button.active {
   background-color: rgb(12, 45, 90);
 }
 

@@ -8,9 +8,14 @@ interface Props {
 }
 
 const GodHeader: React.FC<Props> = ({ tab, setTab }) => {
+  const activeTab = (tabButton: string) => {
+    return tab === tabButton ? styles.active : "";
+  };
+
   return (
     <div className={styles.godHeader}>
       <button
+        className={activeTab("lore")}
         onClick={() => {
           setTab("lore");
         }}
@@ -18,6 +23,7 @@ const GodHeader: React.FC<Props> = ({ tab, setTab }) => {
         Lore
       </button>
       <button
+        className={activeTab("abilities")}
         onClick={() => {
           setTab("abilities");
         }}
@@ -25,6 +31,7 @@ const GodHeader: React.FC<Props> = ({ tab, setTab }) => {
         Abilities
       </button>
       <button
+        className={activeTab("skins")}
         onClick={() => {
           setTab("skins");
         }}
