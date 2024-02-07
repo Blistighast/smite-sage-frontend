@@ -77,9 +77,10 @@ button.active {
 }
 
 .abilitiesContainer {
-  display: grid;
+  // display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  border-top: 2px solid var(--primary-color);
+  // border-top: 2px solid var(--primary-color);
 }
 
 .ability {
