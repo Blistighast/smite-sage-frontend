@@ -12,7 +12,7 @@ export default function GodPage({ god }: GodData) {
   return (
     <div className={styles.godPage}>
       <GodHeader tab={tab} setTab={setTab} />
-      <div>
+      <div className={styles.godMain}>
         {god ? (
           <div className={styles.godInfo}>
             {tab === "lore" && <GodOverview god={god} />}
