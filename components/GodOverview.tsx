@@ -6,7 +6,7 @@ import GodTitleCard from "./GodTitleCard";
 const GodOverview = ({ god }: GodData) => {
   return (
     <div className={styles.overviewContainer}>
-      <div>
+      <div className={styles.loreContainer}>
         <p>
           {god.Name} is a <Link href={`/gods/`}>god</Link> in{" "}
           <Link href={`/`}>Smite</Link>.
