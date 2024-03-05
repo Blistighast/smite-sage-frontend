@@ -1,4 +1,5 @@
 import styles from "@/styles/playerPage.module.scss";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface Player {
@@ -64,6 +65,14 @@ const Player: React.FC<queryProps> = ({ name }) => {
       {player ? (
         <div className={styles.playerPage}>
           <div className={styles.playerAccountInfo}>
+            <div>
+              <Image
+                src={`${player.Avatar_URL}`}
+                alt="Pantheon Icon"
+                width={50}
+                height={50}
+              />
+            </div>
             <h2>
               {player.Name.charAt(0).toUpperCase() + player.Name.slice(1)}
             </h2>
