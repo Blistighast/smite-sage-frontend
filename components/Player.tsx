@@ -66,12 +66,21 @@ const Player: React.FC<queryProps> = ({ name }) => {
         <div className={styles.playerPage}>
           <div className={styles.playerAccountInfo}>
             <div>
-              <Image
-                src={`${player.Avatar_URL}`}
-                alt="Pantheon Icon"
-                width={50}
-                height={50}
-              />
+              {player.Avatar_URL ? (
+                <Image
+                  src={`${player.Avatar_URL}`}
+                  alt="Player Avatar"
+                  width={150}
+                  height={150}
+                />
+              ) : (
+                <Image
+                  src={`/smiteAvatarDefault.jpg`}
+                  alt="Player Avatar"
+                  width={150}
+                  height={150}
+                />
+              )}
             </div>
             <h2>
               {player.Name.charAt(0).toUpperCase() + player.Name.slice(1)}
