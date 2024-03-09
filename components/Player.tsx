@@ -58,7 +58,7 @@ const Player: React.FC<queryProps> = ({ name }) => {
     }
   }, [name]);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <p>Loading player...</p>;
 
   return (
     <>
@@ -70,15 +70,15 @@ const Player: React.FC<queryProps> = ({ name }) => {
                 <Image
                   src={`${player.Avatar_URL}`}
                   alt="Player Avatar"
-                  width={150}
-                  height={150}
+                  width={125}
+                  height={125}
                 />
               ) : (
                 <Image
                   src={`/smiteAvatarDefault.jpg`}
                   alt="Player Avatar"
-                  width={150}
-                  height={150}
+                  width={125}
+                  height={125}
                 />
               )}
             </div>
@@ -102,6 +102,12 @@ const Player: React.FC<queryProps> = ({ name }) => {
           </div>
           <div className={styles.rankedStats}>
             <p>Ranked Conquest: {player.Rank_Stat_Conquest.toFixed(0)}</p>
+            <Image
+              src={`/smiteAvatarDefault.jpg`}
+              alt="Player Avatar"
+              width={125}
+              height={125}
+            />
             <p>Tier Conquest: {player.Tier_Conquest}</p>
             <p>Ranked Duel: {player.Rank_Stat_Duel.toFixed(0)}</p>
             <p>Tier Duel: {player.Tier_Duel}</p>
