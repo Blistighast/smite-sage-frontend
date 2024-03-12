@@ -75,7 +75,7 @@ const Player: React.FC<queryProps> = ({ name }) => {
                 />
               ) : (
                 <Image
-                  src={`/smiteAvatarDefault.jpg`}
+                  src={`/icons/player_icons/playerAvatarDefault.jpg`}
                   alt="Player Avatar"
                   width={125}
                   height={125}

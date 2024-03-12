@@ -19,7 +19,7 @@ const GodTitleCard = ({ god }: GodData) => {
       <div className={styles.godType}>
         <div>
           <Image
-            src={`/class_icons/${god.Roles}.webp`}
+            src={`/icons/class_icons/${god.Roles}.webp`}
             alt="Role Icon"
             width={50}
             height={50}
@@ -28,7 +28,7 @@ const GodTitleCard = ({ god }: GodData) => {
         </div>
         <div>
           <Image
-            src={`/pantheon_icons/${god.Pantheon}.webp`}
+            src={`/icons/pantheon_icons/${god.Pantheon}.webp`}
             alt="Pantheon Icon"
             width={50}
             height={50}

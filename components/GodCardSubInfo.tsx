@@ -13,7 +13,7 @@ const GodCardSubInfo: React.FC<GodInfoProps> = ({ god }) => {
       <span className="pantheon">
         <p>{god.Pantheon}</p>
         <Image
-          src={`/pantheon_icons/${god.Pantheon}.webp`}
+          src={`/icons/pantheon_icons/${god.Pantheon}.webp`}
           alt="Pantheon Icon"
           width={30}
           height={30}
@@ -22,7 +22,7 @@ const GodCardSubInfo: React.FC<GodInfoProps> = ({ god }) => {
       <span className="roles">
         <p>{god.Roles}</p>
         <Image
-          src={`/class-icons/${god.Roles}.webp`}
+          src={`/icons/class-icons/${god.Roles}.webp`}
           alt="Role Icon"
           width={30}
           height={30}

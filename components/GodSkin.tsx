@@ -29,7 +29,7 @@ const GodSkin: React.FC<SkinProps> = ({ skin }) => {
       <span>
         <p>Favor: {skin.price_favor}</p>
         <Image
-          src={"/icons/favor.webp"}
+          src={"/icons/currency_icons/favor.webp"}
           alt="favor icon"
           width={30}
           height={30}
@@ -37,7 +37,12 @@ const GodSkin: React.FC<SkinProps> = ({ skin }) => {
       </span>
       <span>
         <p>Gems: {skin.price_gems}</p>
-        <Image src={"/icons/gem.png"} alt="gem icon" width={30} height={30} />
+        <Image
+          src={"/icons/currency_icons/gem.png"}
+          alt="gem icon"
+          width={30}
+          height={30}
+        />
       </span>
     </div>
   );
