@@ -20,12 +20,14 @@ const GodSkin: React.FC<SkinProps> = ({ skin }) => {
     <div className={styles.skinCard}>
       <h3>{skin.skin_name}</h3>
       <p>{skin.obtainability}</p>
-      <Image
-        src={skin.godSkin_URL}
-        alt={skin.skin_name}
-        width={250}
-        height={300}
-      />
+      <div className={styles.imageError}>
+        <Image
+          src={skin.godSkin_URL}
+          alt={skin.skin_name}
+          width={250}
+          height={300}
+        />
+      </div>
       <span>
         <p>Favor: {skin.price_favor}</p>
         <Image

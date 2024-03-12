@@ -120,6 +120,11 @@ button.active {
   gap: 3px;
 }
 
+.imageError {
+  height: 300px;
+  width: 250px;
+}
+
 @media (max-width: 900px) {
   .overviewContainer {
     display: flex;
