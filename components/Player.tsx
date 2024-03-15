@@ -101,18 +101,37 @@ const Player: React.FC<queryProps> = ({ name }) => {
             <p>Worshippers: {player.Total_Worshippers}</p>
           </div>
           <div className={styles.rankedStats}>
+            <h3>Ranked Stats</h3>
+            <h4>Conquest</h4>
+            {}
+            <p>Conquest controller: {player.Rank_Stat_Conquest_Controller}</p>
             <p>Ranked Conquest: {player.Rank_Stat_Conquest.toFixed(0)}</p>
+            <p>Tier Conquest: {player.Tier_Conquest}</p>
             <Image
-              src={`/smiteAvatarDefault.jpg`}
-              alt="Player Avatar"
+              src={`/icons/rank_icons/conquest/Conquest_Master.webp`}
+              alt="Player Conquest Rank Badge"
               width={125}
               height={125}
             />
-            <p>Tier Conquest: {player.Tier_Conquest}</p>
-            <p>Ranked Duel: {player.Rank_Stat_Duel.toFixed(0)}</p>
-            <p>Tier Duel: {player.Tier_Duel}</p>
+            <h4>Joust</h4>
+            <p>Joust controller: {player.Rank_Stat_Joust_Controller}</p>
             <p>Ranked Joust: {player.Rank_Stat_Joust.toFixed(0)}</p>
             <p>Tier Joust: {player.Tier_Joust}</p>
+            <Image
+              src={`/icons/rank_icons/joust/Joust_Master.webp`}
+              alt="Player Joust Rank Badge"
+              width={125}
+              height={125}
+            />
+            <h4>Duel</h4>
+            <p>Ranked Duel: {player.Rank_Stat_Duel.toFixed(0)}</p>
+            <p>Tier Duel: {player.Tier_Duel}</p>
+            <Image
+              src={`/icons/rank_icons/duel/Duel_Master.webp`}
+              alt="Player Duel Rank Badge"
+              width={125}
+              height={125}
+            />
           </div>
         </div>
       ) : (
