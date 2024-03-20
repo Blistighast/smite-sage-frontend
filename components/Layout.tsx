@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Header from "./SiteHeader";
 import Footer from "./Footer";
 import React from "react";
 

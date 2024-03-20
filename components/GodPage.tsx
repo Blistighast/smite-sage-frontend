@@ -5,19 +5,24 @@ import GodOverview from "./GodOverview";
 import GodHeader from "./GodHeader";
 
 import { useState } from "react";
+import Header from "./Header";
 
 export default function GodPage({ god }: GodData) {
-  const [tab, setTab] = useState<string>("lore");
+  const [activeTab, setActiveTab] = useState<string>("lore");
 
   return (
     <div className={styles.godPage}>
-      <GodHeader tab={tab} setTab={setTab} />
+      <Header
+        tabNames={["lore", "abilities", "skins"]}
+        currentTab={activeTab}
+        setActiveTab={setActiveTab}
+      />
       <div className={styles.godMain}>
         {god ? (
           <div className={styles.godInfo}>
-            {tab === "lore" && <GodOverview god={god} />}
-            {tab === "abilities" && <GodAbilities god={god} />}
-            {tab === "skins" && <GodSkins skins={god.skins} />}
+            {activeTab === "lore" && <GodOverview god={god} />}
+            {activeTab === "abilities" && <GodAbilities god={god} />}
+            {activeTab === "skins" && <GodSkins skins={god.skins} />}
           </div>
         ) : (
           <p>Loading...</p>

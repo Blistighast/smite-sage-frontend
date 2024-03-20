@@ -1,13 +1,14 @@
 import { Dispatch, SetStateAction } from "react";
 
 import styles from "@/styles/godPage.module.scss";
+import Header from "./Header";
 
 interface Props {
   tab: string;
-  setTab: Dispatch<SetStateAction<string>>;
+  setActiveTab: Dispatch<SetStateAction<string>>;
 }
 
-const GodHeader: React.FC<Props> = ({ tab, setTab }) => {
+const GodHeader: React.FC<Props> = ({ tab, setActiveTab }) => {
   const activeTab = (tabButton: string) => {
     return tab === tabButton ? styles.active : "";
   };
@@ -17,7 +18,7 @@ const GodHeader: React.FC<Props> = ({ tab, setTab }) => {
       <button
         className={activeTab("lore")}
         onClick={() => {
-          setTab("lore");
+          setActiveTab("lore");
         }}
       >
         Lore
@@ -25,7 +26,7 @@ const GodHeader: React.FC<Props> = ({ tab, setTab }) => {
       <button
         className={activeTab("abilities")}
         onClick={() => {
-          setTab("abilities");
+          setActiveTab("abilities");
         }}
       >
         Abilities
@@ -33,7 +34,7 @@ const GodHeader: React.FC<Props> = ({ tab, setTab }) => {
       <button
         className={activeTab("skins")}
         onClick={() => {
-          setTab("skins");
+          setActiveTab("skins");
         }}
       >
         Skins

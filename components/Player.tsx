@@ -1,5 +1,4 @@
 import styles from "@/styles/playerPage.module.scss";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import PlayerOverview from "./PlayerOverview";
 import PlayerGodStats from "./PlayerGodStats";
