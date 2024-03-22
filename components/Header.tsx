@@ -14,7 +14,9 @@ const Header: React.FC<Props> = ({
   setActiveTab: setActiveTab,
 }) => {
   const currentTab = (tabButton: string) => {
-    return activeTab === tabButton ? styles.active : "";
+    return activeTab.toLowerCase() === tabButton.toLowerCase()
+      ? styles.active
+      : "";
   };
 
   return (

@@ -43,7 +43,7 @@ const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 const Player: React.FC<queryProps> = ({ name }) => {
   const [player, setPlayer] = useState<Player>();
   const [isLoading, setLoading] = useState(false);
-  const [activeTab, setActiveTab] = useState("");
+  const [activeTab, setActiveTab] = useState("Overview");
 
   useEffect(() => {
     setLoading(true);
@@ -66,7 +66,7 @@ const Player: React.FC<queryProps> = ({ name }) => {
   return (
     <>
       <Header
-        tabNames={["firstTab", "secondTab"]}
+        tabNames={["Overview", "Gods", "Recent Games", "Ranked"]}
         activeTab={activeTab}
         setActiveTab={setActiveTab}
       />
