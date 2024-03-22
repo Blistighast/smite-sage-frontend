@@ -14,7 +14,7 @@ export default function GodPage({ god }: GodData) {
     <div className={styles.godPage}>
       <Header
         tabNames={["lore", "abilities", "skins"]}
-        currentTab={activeTab}
+        activeTab={activeTab}
         setActiveTab={setActiveTab}
       />
       <div className={styles.godMain}>

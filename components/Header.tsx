@@ -4,13 +4,17 @@ import styles from "@/styles/godPage.module.scss";
 
 interface Props {
   tabNames: string[];
-  currentTab: string;
+  activeTab: string;
   setActiveTab: Dispatch<SetStateAction<string>>;
 }
 
-const Header: React.FC<Props> = ({ tabNames, currentTab, setActiveTab }) => {
-  const activeTab = (tabButton: string) => {
-    return currentTab === tabButton ? styles.active : "";
+const Header: React.FC<Props> = ({
+  tabNames,
+  activeTab: activeTab,
+  setActiveTab: setActiveTab,
+}) => {
+  const currentTab = (tabButton: string) => {
+    return activeTab === tabButton ? styles.active : "";
   };
 
   return (
@@ -18,7 +22,7 @@ const Header: React.FC<Props> = ({ tabNames, currentTab, setActiveTab }) => {
       {tabNames.map((tabName) => (
         <button
           key={tabName}
-          className={activeTab(`${tabName}`)}
+          className={currentTab(`${tabName}`)}
           onClick={() => {
             setActiveTab(`${tabName}`);
           }}
@@ -26,30 +30,6 @@ const Header: React.FC<Props> = ({ tabNames, currentTab, setActiveTab }) => {
           {tabName.charAt(0).toUpperCase() + tabName.slice(1)}
         </button>
       ))}
-      {/* <button
-        className={activeTab("lore")}
-        onClick={() => {
-          setActiveTab("lore");
-        }}
-      >
-        Lore
-      </button>
-      <button
-        className={activeTab("abilities")}
-        onClick={() => {
-          setActiveTab("abilities");
-        }}
-      >
-        Abilities
-      </button>
-      <button
-        className={activeTab("skins")}
-        onClick={() => {
-          setActiveTab("skins");
-        }}
-      >
-        Skins
-      </button> */}
     </div>
   );
 };

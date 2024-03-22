@@ -2,6 +2,7 @@ import styles from "@/styles/playerPage.module.scss";
 import { useEffect, useState } from "react";
 import PlayerOverview from "./PlayerOverview";
 import PlayerGodStats from "./PlayerGodStats";
+import Header from "./Header";
 
 interface Player {
   Name: string;
@@ -42,6 +43,7 @@ const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 const Player: React.FC<queryProps> = ({ name }) => {
   const [player, setPlayer] = useState<Player>();
   const [isLoading, setLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState("");
 
   useEffect(() => {
     setLoading(true);
@@ -63,6 +65,11 @@ const Player: React.FC<queryProps> = ({ name }) => {
 
   return (
     <>
+      <Header
+        tabNames={["firstTab", "secondTab"]}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+      />
       {player ? (
         <div className={styles.playerPage}>
           <PlayerOverview player={player} />
