@@ -34,6 +34,22 @@ interface Player {
   Tier_Joust: number;
 }
 
+// example player single god data, in list of all gods :
+// {
+//   Assists: 49,
+//   Deaths: 17,
+//   Kills: 21,
+//   Losses: 4,
+//   MinionKills: 406,
+//   Rank: 1,
+//   Wins: 4,
+//   Worshippers: 82,
+//   god: 'Tyr',
+//   god_id: '1924',
+//   player_id: '709171487',
+//   ret_msg: null
+// },
+
 interface queryProps {
   name: string | string[] | undefined;
 }
